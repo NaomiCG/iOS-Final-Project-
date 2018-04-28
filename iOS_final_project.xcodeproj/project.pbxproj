@@ -15,6 +15,11 @@
 		49D1BB4338CE92B5256B908E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D1B9C3E1B8695D80874B4A /* AppDelegate.swift */; };
 		49D1BBB2C4313949622238E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D1B420866F61D43BE31562 /* Main.storyboard */; };
 		49D1BDA0E9C057EC034599FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D1BD7DEB335DFBEE0434EA /* LaunchScreen.storyboard */; };
+		79D22EDD2093FED50002EDA0 /* Field line.png in Resources */ = {isa = PBXBuildFile; fileRef = 79D22EDC2093FED50002EDA0 /* Field line.png */; };
+		79D22EDF2093FFB60002EDA0 /* Field line.png in Resources */ = {isa = PBXBuildFile; fileRef = 79D22EDE2093FFB60002EDA0 /* Field line.png */; };
+		79D22EE1209400770002EDA0 /* Field line.png in Resources */ = {isa = PBXBuildFile; fileRef = 79D22EE0209400770002EDA0 /* Field line.png */; };
+		79D22EE2209400F80002EDA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D1B420866F61D43BE31562 /* Main.storyboard */; };
+		79D22EE3209400F90002EDA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D1B420866F61D43BE31562 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,10 @@
 		49D1BB962035FA32EEEFA2BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49D1BD26204F7C699E3CAAAB /* iOS_final_project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_final_project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49D1BFB8C577D893889A5D82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		79D22EDC2093FED50002EDA0 /* Field line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Field line.png"; path = "../../Field line.png"; sourceTree = "<group>"; };
+		79D22EDE2093FFB60002EDA0 /* Field line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Field line.png"; path = "../../Field line.png"; sourceTree = "<group>"; };
+		79D22EE0209400770002EDA0 /* Field line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Field line.png"; path = "../../Field line.png"; sourceTree = "<group>"; };
+		79D22EE5209401290002EDA0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +108,13 @@
 			isa = PBXGroup;
 			children = (
 				49D1B129B7F3FDB7B89F0458 /* Info.plist */,
+				79D22EE0209400770002EDA0 /* Field line.png */,
+				49D1B420866F61D43BE31562 /* Main.storyboard */,
 				49D1BAE37934BDEDC693EB50 /* Assets.xcassets */,
 				49D1BD7DEB335DFBEE0434EA /* LaunchScreen.storyboard */,
 				49D1B9C3E1B8695D80874B4A /* AppDelegate.swift */,
-				49D1B420866F61D43BE31562 /* Main.storyboard */,
+				79D22EE0209400770002EDA0 /* Field line.png */,
+				79D22EDE2093FFB60002EDA0 /* Field line.png */,
 				49D1B54FAAA45269D5F00E9E /* MasterViewController.swift */,
 				49D1B1E7BCCE093EA22B9E07 /* DetailViewController.swift */,
 			);
@@ -216,6 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79D22EE3209400F90002EDA0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79D22EE2209400F80002EDA0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,8 +245,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				49D1B0101CE36D14C8B6521E /* Assets.xcassets in Resources */,
+				79D22EDD2093FED50002EDA0 /* Field line.png in Resources */,
 				49D1BDA0E9C057EC034599FC /* LaunchScreen.storyboard in Resources */,
+				79D22EDF2093FFB60002EDA0 /* Field line.png in Resources */,
 				49D1BBB2C4313949622238E6 /* Main.storyboard in Resources */,
+				79D22EE1209400770002EDA0 /* Field line.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +302,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				49D1BB962035FA32EEEFA2BD /* Base */,
+				79D22EE5209401290002EDA0 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -497,6 +515,7 @@
 				49D1B8F9BA983800F512E1F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49D1B7E506F26982824A93C8 /* Build configuration list for PBXNativeTarget "iOS_final_projectTests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +524,7 @@
 				49D1B8B4E92F7ABD46EFDBF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49D1BD779C52DDC64393D5B0 /* Build configuration list for PBXNativeTarget "iOS_final_project" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +533,7 @@
 				49D1BA564D438E7F8F5D4017 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49D1BE74543F10C4754EC5C9 /* Build configuration list for PBXProject "iOS_final_project" */ = {
 			isa = XCConfigurationList;

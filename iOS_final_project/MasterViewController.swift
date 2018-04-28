@@ -19,18 +19,19 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
-    navigationItem.leftBarButtonItem = editButtonItem
-
-    let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
-    navigationItem.rightBarButtonItem = addButton
+//    navigationItem.leftBarButtonItem = editButtonItem
+//
+//    let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
+//    navigationItem.rightBarButtonItem = addButton
 
     if let split = splitViewController {
         let controllers = split.viewControllers
-        detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
+//        detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
     }
     }
 
-
+    @IBOutlet weak var name: UITextField!
+    
     override func viewWillAppear(_ animated: Bool) {
     clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
     super.viewWillAppear(animated)
@@ -87,7 +88,8 @@ class MasterViewController: UITableViewController {
 
     return cell
     }
-
+    
+    
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
     // Return false if you do not want the specified item to be editable.
