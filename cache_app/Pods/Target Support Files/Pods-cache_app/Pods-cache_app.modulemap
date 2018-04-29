@@ -1,0 +1,6 @@
+framework module Pods_cache_app {
+  umbrella header "Pods-cache_app-umbrella.h"
+
+  export *
+  module * { export * }
+}
