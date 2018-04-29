@@ -26,52 +26,25 @@ class ViewController: UIViewController {
     @IBAction func action(_ sender: Any) {
         if email.text != "" && password.text != ""
         {
-            let myVar = 0
-            //check if it's sign up or log in
-            if myVar == 1//log in
-            {
-                Auth.auth().signIn(withEmail: email.text!, password: password.text!, completion: { (user, error) in
-                    if user != nil
+            Auth.auth().createUser(withEmail: email.text!, password: password.text!, completion: { (user, error) in
+                if user != nil
+                {
+                    //sign up successful
+                    print("SIGN UP SUCCESSFUL")
+                }
+                else
+                {
+                    if let myError = error?.localizedDescription
                     {
-                        //log in successful
-                        print("Log in successful!")
+                        //we have a description of the error
+                        print(myError)
                     }
                     else
                     {
-                        if let myError = error?.localizedDescription
-                        {
-                            //we have a description of the error
-                            print(myError)
-                        }
-                        else
-                        {
-                            print("ERROR")
-                        }
+                        print("ERROR")
                     }
-                })
-            }
-            else //sign up
-            {
-                Auth.auth().createUser(withEmail: email.text!, password: password.text!, completion: { (user, error) in
-                    if user != nil
-                    {
-                        //sign up successful
-                        print("Sign up successful!")
-                    }
-                    else
-                    {
-                        if let myError = error?.localizedDescription
-                        {
-                            //we have a description of the error
-                            print(myError)
-                        }
-                        else
-                        {
-                            print("ERROR")
-                        }
-                    }
-                })
-            }
+                }
+            })
         }
     }
     

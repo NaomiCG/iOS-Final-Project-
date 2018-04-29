@@ -19,6 +19,7 @@
 		89143897954DD733B0649605 /* Pods_cache_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01916DC24B4BFAD54D9722EA /* Pods_cache_app.framework */; };
 		CFF2F15AF2D877F66F1AB1F6 /* Pods_cache_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D66582FFE10598CC7FBC5B22 /* Pods_cache_appTests.framework */; };
 		F96A7B60209636010043D34C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F96A7B5F209636000043D34C /* GoogleService-Info.plist */; };
+		F96A7B6420965CA00043D34C /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96A7B6320965CA00043D34C /* LogInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		E6593FE6E5760168DD840A55 /* Pods-cache_appUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cache_appUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-cache_appUITests/Pods-cache_appUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EFCEDF31678516E2CEF697AA /* Pods-cache_appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cache_appTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cache_appTests/Pods-cache_appTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F96A7B5F209636000043D34C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F96A7B6320965CA00043D34C /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				49D1BADFD7F0F158457ABA59 /* LaunchScreen.storyboard */,
 				49D1B0D4F8B3D1E796F772E6 /* AppDelegate.swift */,
 				49D1B293B257B75817D0E5CA /* Main.storyboard */,
+				F96A7B6320965CA00043D34C /* LogInViewController.swift */,
 				79DE7C5C209521D6008566DE /* signup.storyboard */,
 				49D1BDB3EF8CB99DAADA2072 /* ViewController.swift */,
 			);
@@ -392,6 +395,7 @@
 			files = (
 				49D1B4DC2A2F65B706EC88EC /* AppDelegate.swift in Sources */,
 				49D1B315EA2A1DF61810F636 /* ViewController.swift in Sources */,
+				F96A7B6420965CA00043D34C /* LogInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
