@@ -194,6 +194,9 @@
                                 <state key="normal" title="&lt;&lt;">
                                     <color key="titleColor" red="0.98064651859999996" green="0.98419248859999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="S5G-9U-ax8" kind="showDetail" id="Lc5-NA-1O3"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cry-gb-Shg">
                                 <rect key="frame" x="22" y="253" width="334" height="30"/>
@@ -334,4 +337,7 @@
         <image name="Image" width="200" height="289"/>
         <image name="icon_83.5" width="514" height="857"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Lc5-NA-1O3"/>
+    </inferredMetricsTieBreakers>
 </document>
