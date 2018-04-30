@@ -11,6 +11,8 @@ pod 'Firebase/Core'
 
 pod 'Firebase/Auth’
 
+pod 'Firebase/Database'
+
   target 'cache_appTests' do
     inherit! :search_paths
     # Pods for testing
