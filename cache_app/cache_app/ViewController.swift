@@ -14,7 +14,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    birthday.setValue(UIColor.white, forKey: "textColor")
     }
 
 
@@ -53,5 +53,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var birthday: UIDatePicker!
+
     @IBOutlet weak var actionButton: UIButton!
 }
