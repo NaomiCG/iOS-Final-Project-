@@ -31,6 +31,7 @@ class ViewController: UIViewController {
                 {
                     //sign up successful
                     print("SIGN UP SUCCESSFUL")
+                    self.performSegue(withIdentifier: "SegueToRegistrationInfo", sender: self)
                 }
                 else
                 {
