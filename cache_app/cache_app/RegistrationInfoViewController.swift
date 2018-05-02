@@ -111,7 +111,7 @@ class RegistrationInfoViewController: UIViewController {
         
         let label = UILabel(frame:CGRect(x:16, y:yValue, width:108, height:21))
         label.text = alert.textFields?[0].text
-        label.font = UIFont(name:"HelveticaNeue-Thin", size:self.font.pointSize)
+        label.font = UIFont(name:"HelveticaNeue-Thin", size:label.font.pointSize)
         self.view.addSubview(label)
         
         
