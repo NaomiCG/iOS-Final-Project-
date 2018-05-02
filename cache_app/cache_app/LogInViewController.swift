@@ -10,14 +10,15 @@ import UIKit
 import FirebaseAuth
 
 class LogInViewController: UIViewController {
-    @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var email: UITextField?
+    @IBOutlet weak var password: UITextField?
     @IBOutlet weak var actionButton: UIButton!
     
     @IBAction func logIn(_ sender: Any) {
-        if email.text != "" && password.text != ""
+        if email?.text != "" && password?.text != ""
         {
-            Auth.auth().signIn(withEmail: email.text!, password: password.text!, completion: { (user, error) in
+            //log in not catching error when people don't have an account
+            Auth.auth().signIn(withEmail: (email?.text!)!, password: (password?.text!)!, completion: { (user, error) in
                 if user != nil
                 {
                     //log in successful
