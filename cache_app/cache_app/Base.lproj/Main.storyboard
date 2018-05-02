@@ -348,7 +348,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mes-Tb-XCP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="Mes-Tb-XCP">
                                 <rect key="frame" x="16" y="100" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -381,7 +381,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Living Expenses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UlW-yF-DUj">
-                                <rect key="frame" x="16" y="534" width="205" height="21"/>
+                                <rect key="frame" x="16" y="579" width="205" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.9115250707" green="0.32291474939999998" blue="0.63386648889999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -444,42 +444,35 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="280.00" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bjA-ac-WMO">
-                                <rect key="frame" x="132" y="440" width="113" height="30"/>
+                                <rect key="frame" x="132" y="445" width="113" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="200.00" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vgg-hS-KxT">
-                                <rect key="frame" x="132" y="478" width="113" height="30"/>
+                                <rect key="frame" x="132" y="483" width="113" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rent:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lyQ-HE-krT">
-                                <rect key="frame" x="16" y="572" width="38" height="21"/>
+                                <rect key="frame" x="16" y="617" width="38" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Utilities:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YTL-U9-bgd">
-                                <rect key="frame" x="16" y="610" width="54" height="21"/>
+                                <rect key="frame" x="16" y="655" width="54" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1000.00" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UAj-mg-vzG">
-                                <rect key="frame" x="132" y="563" width="113" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100.00" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gMm-tH-6YK">
-                                <rect key="frame" x="132" y="601" width="113" height="30"/>
+                                <rect key="frame" x="132" y="613" width="113" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
@@ -494,34 +487,84 @@
                                 <rect key="frame" x="339" y="440" width="21" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="minus"/>
+                                <connections>
+                                    <action selector="removeStudentLoan:" destination="SJG-GH-Kej" eventType="touchUpInside" id="H0B-Ee-Qww"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKw-xK-o9S">
                                 <rect key="frame" x="339" y="483" width="21" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="minus"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSm-NF-XPA">
-                                <rect key="frame" x="339" y="568" width="21" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="minus"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZmT-va-0kh">
-                                <rect key="frame" x="339" y="606" width="21" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="minus"/>
+                                <connections>
+                                    <action selector="removeCCBill:" destination="SJG-GH-Kej" eventType="touchUpInside" id="dTW-gy-Bpt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2KS-FP-BYX">
-                                <rect key="frame" x="339" y="535" width="20" height="20"/>
+                                <rect key="frame" x="339" y="580" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="plus"/>
+                                <connections>
+                                    <action selector="addLivingExpense:" destination="SJG-GH-Kej" eventType="touchUpInside" id="Zlo-BQ-94q"/>
+                                </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSm-NF-XPA">
+                                <rect key="frame" x="339" y="613" width="21" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="minus"/>
+                                <connections>
+                                    <action selector="removeRent:" destination="SJG-GH-Kej" eventType="touchUpInside" id="VBa-YR-y9R"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZmT-va-0kh">
+                                <rect key="frame" x="339" y="651" width="21" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="minus"/>
+                                <connections>
+                                    <action selector="removeUtilities:" destination="SJG-GH-Kej" eventType="touchUpInside" id="EC2-Ht-u9J"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kx9-Ov-erb">
+                                <rect key="frame" x="157" y="748" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.9115250707" green="0.32291474939999998" blue="0.63386648889999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="SAVE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100.00" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gMm-tH-6YK">
+                                <rect key="frame" x="132" y="650" width="113" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="slp-Wb-aOz"/>
                     </view>
                     <connections>
+                        <outlet property="birthday" destination="B6r-hg-Hoa" id="jBr-NJ-MyP"/>
+                        <outlet property="ccbillLabel" destination="0kd-hI-vXx" id="r8I-gZ-rO2"/>
+                        <outlet property="ccbillValue" destination="Vgg-hS-KxT" id="MJI-kZ-NVL"/>
+                        <outlet property="companyName" destination="SsR-MH-W1v" id="XOr-nS-joz"/>
+                        <outlet property="email" destination="aom-lg-YZJ" id="0EG-NE-4xh"/>
+                        <outlet property="loanLabel" destination="ONL-CD-1DY" id="yF0-9w-p6w"/>
+                        <outlet property="loanValue" destination="bjA-ac-WMO" id="Oym-4Z-EWd"/>
+                        <outlet property="location" destination="vU1-w7-7is" id="dDg-Yu-lEN"/>
+                        <outlet property="name" destination="81g-5B-r3l" id="ns8-Xc-63A"/>
+                        <outlet property="newLivingExpenseButton" destination="2KS-FP-BYX" id="03b-pQ-bTX"/>
+                        <outlet property="newLoanButton" destination="4VE-Xe-gkT" id="2db-AF-ed3"/>
+                        <outlet property="removeCCBillButton" destination="eKw-xK-o9S" id="PR2-Tf-8gk"/>
+                        <outlet property="removeRentButton" destination="PSm-NF-XPA" id="bo4-P7-WJi"/>
+                        <outlet property="removeStudentLoanButton" destination="3ZC-t5-bCr" id="ojo-Gn-ko4"/>
+                        <outlet property="removeUtilitiesButton" destination="ZmT-va-0kh" id="Kxf-EP-4KC"/>
+                        <outlet property="rentLabel" destination="lyQ-HE-krT" id="so8-2x-SEE"/>
+                        <outlet property="rentValue" destination="UAj-mg-vzG" id="3F9-q8-ZXx"/>
                         <outlet property="salary" destination="FIE-Ow-Aob" id="RvH-CE-sfC"/>
                         <outlet property="salarySlider" destination="7d5-3b-qSj" id="82u-Ac-E5q"/>
+                        <outlet property="utilitiesLabel" destination="YTL-U9-bgd" id="R3N-VC-Sff"/>
+                        <outlet property="utilitiesValue" destination="gMm-tH-6YK" id="GNn-qA-qUd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sh0-HK-fNK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -549,6 +592,7 @@
     </scenes>
     <resources>
         <image name="Image" width="200" height="289"/>
+        <image name="camera" width="500" height="500"/>
         <image name="icon_83.5" width="514" height="857"/>
         <image name="minus" width="48" height="48"/>
         <image name="plus" width="48" height="48"/>
