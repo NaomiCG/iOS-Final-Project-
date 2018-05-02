@@ -38,10 +38,13 @@ class ViewController: UIViewController {
                     {
                         //we have a description of the error
                         print(myError)
+                        self.warning.text = myError;
+                        
                     }
                     else
                     {
                         print("ERROR")
+                        self.warning.text = "Error, please review fields."
                     }
                 }
             })
@@ -55,4 +58,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var birthday: UIDatePicker!
 
     @IBOutlet weak var actionButton: UIButton!
+    @IBOutlet weak var warning: UILabel!
+    
 }

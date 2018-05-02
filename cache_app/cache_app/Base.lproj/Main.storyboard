@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Italic</string>
+        </array>
         <array key="HelveticaNeueLights.ttc">
             <string>HelveticaNeue-Thin</string>
         </array>
@@ -162,13 +165,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdi-L9-ZmT">
+                                <rect key="frame" x="78" y="431" width="282" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="FTD-jF-mCG"/>
                     </view>
                     <connections>
                         <outlet property="actionButton" destination="Whd-1J-nIL" id="BwU-rb-R6N"/>
+                        <outlet property="email" destination="CxJ-fW-FAT" id="6IN-NT-9xo"/>
                         <outlet property="password" destination="88f-Ep-jMJ" id="l8L-dN-B6l"/>
+                        <outlet property="warning" destination="rdi-L9-ZmT" id="PST-IY-MzF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hd-LB-RHZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -227,7 +239,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="EMAIL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6m-NA-udx">
-                                <rect key="frame" x="22" y="380" width="106" height="21"/>
+                                <rect key="frame" x="22" y="380" width="101" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -270,7 +282,7 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <action selector="logIn:" destination="vNk-ns-xHK" eventType="touchUpInside" id="sMw-1a-34L"/>
+                                    <action selector="action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QXz-ey-7EK"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQH-85-9k1">
@@ -301,6 +313,13 @@
                                     <!--2018-04-28 22:01:16 +0000-->
                                 </date>
                             </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htJ-MC-3gR">
+                                <rect key="frame" x="100" y="719" width="253" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -311,11 +330,12 @@
                         <outlet property="first" destination="cry-gb-Shg" id="k6C-Am-s1I"/>
                         <outlet property="last" destination="Aar-Ps-llD" id="Iv7-0Z-VNP"/>
                         <outlet property="password" destination="06w-UP-PK6" id="gJ8-lG-Fh2"/>
+                        <outlet property="warning" destination="htJ-MC-3gR" id="Zq0-sK-MAH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-54" y="487"/>
+            <point key="canvasLocation" x="-55.200000000000003" y="486.94581280788179"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="I6R-zo-vqw">

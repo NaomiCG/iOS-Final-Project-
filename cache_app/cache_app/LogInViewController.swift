@@ -10,13 +10,16 @@ import UIKit
 import FirebaseAuth
 
 class LogInViewController: UIViewController {
-    @IBOutlet weak var email: UITextField?
-    @IBOutlet weak var password: UITextField?
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var password: UITextField!
     @IBOutlet weak var actionButton: UIButton!
+    @IBOutlet weak var warning: UILabel!
     
     @IBAction func logIn(_ sender: Any) {
-        if email?.text != "" && password?.text != ""
+        print("Entered the function")
+        if email.text != "" && password.text != ""
         {
+            print("Entered the if statement")
             //log in not catching error when people don't have an account
             Auth.auth().signIn(withEmail: (email?.text!)!, password: (password?.text!)!, completion: { (user, error) in
                 if user != nil
@@ -30,10 +33,12 @@ class LogInViewController: UIViewController {
                     {
                         //we have a description of the error
                         print(myError)
+                        self.warning.text = myError
                     }
                     else
                     {
                         print("ERROR")
+                        self.warning.text = "Error. Please re-enter values."
                     }
                 }
             })
