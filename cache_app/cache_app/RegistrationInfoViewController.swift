@@ -37,7 +37,8 @@ class RegistrationInfoViewController: UIViewController {
     @IBOutlet weak var removeRentButton: UIButton!
     @IBOutlet weak var removeUtilitiesButton: UIButton!
     
-    
+    //keep track of how many different fields the user has filled out/is relevant to the user
+    //necessary for math later when we are adding new fields
     var loansCount:Int = 2
     var expensesCount:Int = 2
     
@@ -52,11 +53,13 @@ class RegistrationInfoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //Slider determines monthly salary
     @IBAction func sliderChanged(_ sender: UISlider) {
         var currentValue = sender.value
         salary.text = "$ \(currentValue)"
     }
     
+    //the following functions are to remove fields that aren't relevant to a user
     @IBAction func removeCCBill(_ sender: Any) {
         ccbillLabel.isHidden = true
         ccbillValue.isHidden = true
@@ -85,6 +88,7 @@ class RegistrationInfoViewController: UIViewController {
         expensesCount -= 1
     }
     
+    //for when the user wants to add an additional living expense, ie wifi or cell phone bill etc
     @IBAction func addLivingExpense(_ sender: Any) {
         let alert = UIAlertController(title: "Additional Living Expense", message: "Enter the type and amount of expense", preferredStyle: .alert)
         alert.addTextField{ (textField) in
@@ -102,10 +106,12 @@ class RegistrationInfoViewController: UIViewController {
         
         self.present(alert, animated:true, completion:nil)
         
-        var yValue = 600 + expensesCount*46
+        //happening too fast - figure out how to wait
+        let yValue = 600 + expensesCount*46
         
         let label = UILabel(frame:CGRect(x:16, y:yValue, width:108, height:21))
         label.text = alert.textFields?[0].text
+        label.font = UIFont(name:"HelveticaNeue-Thin", size:self.font.pointSize)
         self.view.addSubview(label)
         
         
