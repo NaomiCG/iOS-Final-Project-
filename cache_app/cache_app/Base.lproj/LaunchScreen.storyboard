@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,32 +18,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" image="icon_83.5" translatesAutoresizingMaskIntoConstraints="NO" id="Bs0-tG-Pzc">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="9b6-tx-OpC">
                                 <rect key="frame" x="110" y="568" width="155" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="155" id="1jZ-NC-d84"/>
                                 </constraints>
                             </stackView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="Trm-f2-3hU">
-                                <rect key="frame" x="87" y="202" width="200" height="289"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="TV2-AO-0H8">
                                 <rect key="frame" x="110" y="568" width="155" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="icon_83.5" translatesAutoresizingMaskIntoConstraints="NO" id="Mc2-0p-JvC">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="Č" translatesAutoresizingMaskIntoConstraints="NO" id="GaA-0x-QX8">
+                                <rect key="frame" x="104" y="286" width="166" height="240"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Hrn-hv-5GS">
+                                <rect key="frame" x="169" y="577" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9b6-tx-OpC" firstAttribute="centerX" secondItem="KyS-ps-hx3" secondAttribute="centerX" id="0hj-q4-SNr"/>
-                            <constraint firstAttribute="bottom" secondItem="Bs0-tG-Pzc" secondAttribute="bottom" id="o6y-Gc-IY1"/>
-                            <constraint firstItem="Bs0-tG-Pzc" firstAttribute="top" secondItem="KyS-ps-hx3" secondAttribute="top" id="ufq-Yt-iUV"/>
                             <constraint firstItem="1CU-mA-XHi" firstAttribute="bottom" secondItem="9b6-tx-OpC" secondAttribute="bottom" constant="145" id="ujV-7f-nPV"/>
-                            <constraint firstItem="Bs0-tG-Pzc" firstAttribute="leading" secondItem="KyS-ps-hx3" secondAttribute="leading" id="zGx-0L-hMV"/>
-                            <constraint firstItem="Bs0-tG-Pzc" firstAttribute="trailing" secondItem="KyS-ps-hx3" secondAttribute="trailing" id="zLY-7v-tAd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1CU-mA-XHi"/>
                     </view>
@@ -54,7 +55,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="200" height="289"/>
+        <image name="Č" width="166" height="240"/>
         <image name="icon_83.5" width="514" height="857"/>
     </resources>
 </document>
