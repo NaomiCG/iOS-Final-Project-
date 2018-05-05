@@ -21,9 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Override point for customization after application launch.
         FirebaseApp.configure()
         
-        var ref: DatabaseReference!
-        
-        ref = Database.database().reference()
+//        var ref: DatabaseReference!
+//        
+//        ref = Database.database().reference()
         
         //this method rewrites entire object including children
         //self.ref.child("users").child(user.uid).setValue(["username": username])

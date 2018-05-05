@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class RegistrationInfoViewController: UIViewController {
     @IBOutlet weak var name: UITextField!
@@ -42,8 +43,13 @@ class RegistrationInfoViewController: UIViewController {
     var loansCount:Int = 2
     var expensesCount:Int = 2
     
+    var dbReference : DatabaseReference?
+    var dbHandle : DatabaseHandle?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         // Do any additional setup after loading the view.
     }
