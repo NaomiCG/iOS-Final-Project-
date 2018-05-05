@@ -59,8 +59,15 @@ class ViewController: UIViewController {
 
     @IBAction func datePickerChanged(sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM dd, YYYY"
+        dateFormatter.dateFormat = "MM / dd / YYYY"
         birthdayString = dateFormatter.string(from: sender.date)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let correctEmail = self.email.text!.replacingOccurrences(of: ".", with: ",")
+        if let destination = segue.destination as? RegistrationInfoViewController{
+            destination.userEmail = correctEmail
+        }
     }
     
     

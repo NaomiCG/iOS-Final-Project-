@@ -10,7 +10,7 @@ import UIKit
 import FirebaseDatabase
 
 class RegistrationInfoViewController: UIViewController {
-    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var name: UILabel!
     @IBOutlet weak var email: UILabel!
     @IBOutlet weak var birthday: UILabel!
     
@@ -38,6 +38,9 @@ class RegistrationInfoViewController: UIViewController {
     @IBOutlet weak var removeRentButton: UIButton!
     @IBOutlet weak var removeUtilitiesButton: UIButton!
     
+    //variable to recieve email info from previous view controller
+    var userEmail:String?
+    
     //keep track of how many different fields the user has filled out/is relevant to the user
     //necessary for math later when we are adding new fields
     var loansCount:Int = 2
@@ -49,9 +52,35 @@ class RegistrationInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        dbReference = Database.database().reference()
         
+        //setting up user info that we already have
+        //aka displaying their name, email, and birthday
+        
+        if userEmail != nil{
+            email.text = userEmail
+            
+            var userFirstName:String? = ""
+            dbHandle = dbReference?.child("users").child(userEmail!).child("firstName").observe(.value, with: { (snapshot) in
+                userFirstName = snapshot.value as? String
+//                print(userFirstName)
+            })
+            
+            dbHandle = dbReference?.child("users").child(userEmail!).child("lastName").observe(.value, with: { (snapshot) in
+                let userLastName:String? = snapshot.value as? String
+                let userFullName:String = userFirstName! + " " + userLastName!
+                self.name.text = userFullName
+//                print(userFullName)
+            })
 
-        // Do any additional setup after loading the view.
+
+            dbHandle = dbReference?.child("users").child(userEmail!).child("birthday").observe(.value, with: { (snapshot) in
+                let userBirthday:String? = snapshot.value as? String
+                self.birthday.text = userBirthday
+//                print(userBirthday)
+            })
+           
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -112,7 +141,9 @@ class RegistrationInfoViewController: UIViewController {
         
         self.present(alert, animated:true, completion:nil)
         
-        //happening too fast - figure out how to wait
+        //happening too fast - need to figure out how to wait
+        //think i need to move it to another function but haven't figured that out
+        
         let yValue = 600 + expensesCount*46
         
         let label = UILabel(frame:CGRect(x:16, y:yValue, width:108, height:21))
@@ -120,8 +151,14 @@ class RegistrationInfoViewController: UIViewController {
         label.font = UIFont(name:"HelveticaNeue-Thin", size:label.font.pointSize)
         self.view.addSubview(label)
         
-        
-        
     }
+    
+//    func createExpenseBoxes(alert: UIAlertController) {
+//        let yValue = 600 + expensesCount*46
+//        let label = UILabel(frame:CGRect(x:16, y:yValue, width:108, height:21))
+//        label.text = alert.textFields?[0].text
+//        label.font = UIFont(name:"HelveticaNeue-Thin", size:label.font.pointSize)
+//        self.view.addSubview(label)
+//    }
     
 }

@@ -355,13 +355,6 @@
                                 <rect key="frame" x="16" y="100" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Firstname Lastname" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="81g-5B-r3l">
-                                <rect key="frame" x="130" y="100" width="229" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="email@email.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aom-lg-YZJ">
                                 <rect key="frame" x="130" y="140" width="229" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -542,6 +535,13 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Firstname Lastname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3qC-en-sjE">
+                                <rect key="frame" x="130" y="111" width="229" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="slp-Wb-aOz"/>
@@ -555,7 +555,7 @@
                         <outlet property="loanLabel" destination="ONL-CD-1DY" id="yF0-9w-p6w"/>
                         <outlet property="loanValue" destination="bjA-ac-WMO" id="Oym-4Z-EWd"/>
                         <outlet property="location" destination="vU1-w7-7is" id="dDg-Yu-lEN"/>
-                        <outlet property="name" destination="81g-5B-r3l" id="ns8-Xc-63A"/>
+                        <outlet property="name" destination="3qC-en-sjE" id="DXY-i7-bgF"/>
                         <outlet property="newLivingExpenseButton" destination="2KS-FP-BYX" id="03b-pQ-bTX"/>
                         <outlet property="newLoanButton" destination="4VE-Xe-gkT" id="2db-AF-ed3"/>
                         <outlet property="removeCCBillButton" destination="eKw-xK-o9S" id="PR2-Tf-8gk"/>
