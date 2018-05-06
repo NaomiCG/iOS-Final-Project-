@@ -81,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kb8-9k-N5V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-850.39999999999998" y="135.22167487684729"/>
+            <point key="canvasLocation" x="-2999" y="268"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="OXu-5K-oiR">
@@ -146,6 +146,7 @@
                                 </state>
                                 <connections>
                                     <action selector="logIn:" destination="vNk-ns-xHK" eventType="touchUpInside" id="n3P-HV-ceS"/>
+                                    <segue destination="hOd-od-WU8" kind="show" id="A7e-E5-iSx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cnc-hn-ICu">
@@ -186,11 +187,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hd-LB-RHZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-55.200000000000003" y="-181.77339901477833"/>
+            <point key="canvasLocation" x="-1948" y="44"/>
+        </scene>
+        <!--Main Screen View Controller-->
+        <scene sceneID="DtU-gb-cS9">
+            <objects>
+                <viewController id="hOd-od-WU8" customClass="MainScreenViewController" customModule="cache_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b0G-So-s6k">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="tRt-R1-0kx"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G4A-8z-YOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1022" y="44"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="cache_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -339,9 +356,8 @@
                         <segue destination="SJG-GH-Kej" kind="show" identifier="SegueToRegistrationInfo" id="DO0-HO-CK2"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="287.19999999999999" y="486.94581280788179"/>
+            <point key="canvasLocation" x="-1948" y="815"/>
         </scene>
         <!--Registration Info View Controller-->
         <scene sceneID="09w-sY-WlS">
@@ -527,6 +543,9 @@
                                 <state key="normal" title="SAVE">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="hOd-od-WU8" kind="show" id="iLY-7z-pvk"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100.00" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gMm-tH-6YK">
                                 <rect key="frame" x="132" y="650" width="113" height="30"/>
@@ -572,7 +591,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sh0-HK-fNK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1111.2" y="486.94581280788179"/>
+            <point key="canvasLocation" x="-1105" y="814"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xE9-B9-RMV">
@@ -590,7 +609,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mYX-KF-Tf9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-836" y="885"/>
+            <point key="canvasLocation" x="-2999" y="953"/>
         </scene>
     </scenes>
     <resources>
@@ -601,6 +620,7 @@
         <image name="plus" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Lc5-NA-1O3"/>
+        <segue reference="iLY-7z-pvk"/>
+        <segue reference="Kfi-CW-sTv"/>
     </inferredMetricsTieBreakers>
 </document>
