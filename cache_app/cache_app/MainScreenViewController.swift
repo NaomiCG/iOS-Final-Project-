@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class MainScreenViewController: UIViewController {
+    
+    var dbReference : DatabaseReference?
+    var dbHandle : DatabaseHandle?
     
     var stateAbbreviations = [
         "AL" : 0.3,         //ALABAMA           -- 1    -- 0.05
@@ -63,9 +67,14 @@ class MainScreenViewController: UIViewController {
         "WI" : 0.3127,      //WISCONSIN         -- 49   -- 0.0627
         "WY" : 0.25         //WYOMING           -- 50   -- 0.00
     ]
+    
+    //variable to recieve email info from previous view controller
+    var userEmail:String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(userEmail)
 
         // Do any additional setup after loading the view.
         

@@ -15,17 +15,25 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var actionButton: UIButton!
     @IBOutlet weak var warning: UILabel!
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let correctEmail = self.email.text!.replacingOccurrences(of: ".", with: ",")
+        if let destination = segue.destination as? MainScreenViewController{
+            destination.userEmail = correctEmail
+        }
+    }
+    
+    
+    
     @IBAction func logIn(_ sender: Any) {
-        print("Entered the function")
         if email.text != "" && password.text != ""
         {
-            print("Entered the if statement")
             //log in not catching error when people don't have an account
             Auth.auth().signIn(withEmail: (email?.text!)!, password: (password?.text!)!, completion: { (user, error) in
                 if user != nil
                 {
                     //log in successful
-                    print("LOGIN SUCCESSFUL")
+//                    print("LOGIN SUCCESSFUL")
+                    self.performSegue(withIdentifier: "LogInSegue", sender: self)
                 }
                 else
                 {
