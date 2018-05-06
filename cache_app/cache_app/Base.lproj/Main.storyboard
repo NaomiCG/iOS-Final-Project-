@@ -81,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kb8-9k-N5V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2999" y="268"/>
+            <point key="canvasLocation" x="-3906" y="305"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="OXu-5K-oiR">
@@ -656,11 +656,12 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wjl-Gw-BnG"/>
+                        <segue destination="vNk-ns-xHK" kind="show" id="hVZ-LP-tYU"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mYX-KF-Tf9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2999" y="953"/>
+            <point key="canvasLocation" x="-3142" y="304"/>
         </scene>
     </scenes>
     <resources>
@@ -671,7 +672,8 @@
         <image name="plus" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iLY-7z-pvk"/>
-        <segue reference="Lc5-NA-1O3"/>
+        <segue reference="A7e-E5-iSx"/>
+        <segue reference="hVZ-LP-tYU"/>
+        <segue reference="Kfi-CW-sTv"/>
     </inferredMetricsTieBreakers>
 </document>

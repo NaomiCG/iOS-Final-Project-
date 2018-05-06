@@ -72,21 +72,18 @@ class RegistrationInfoViewController: UIViewController, UIPickerViewDelegate, UI
             var userFirstName:String? = ""
             dbHandle = dbReference?.child("users").child(userEmail!).child("firstName").observe(.value, with: { (snapshot) in
                 userFirstName = snapshot.value as? String
-//                print(userFirstName)
             })
             
             dbHandle = dbReference?.child("users").child(userEmail!).child("lastName").observe(.value, with: { (snapshot) in
                 let userLastName:String? = snapshot.value as? String
                 let userFullName:String = userFirstName! + " " + userLastName!
                 self.name.text = userFullName
-//                print(userFullName)
             })
 
 
             dbHandle = dbReference?.child("users").child(userEmail!).child("birthday").observe(.value, with: { (snapshot) in
                 let userBirthday:String? = snapshot.value as? String
                 self.birthday.text = userBirthday
-//                print(userBirthday)
             })
            
         }
@@ -133,9 +130,6 @@ class RegistrationInfoViewController: UIViewController, UIPickerViewDelegate, UI
         if textField == stateTextBox {
             print("it knows it's the same")
             self.stateDropDown.isHidden = false
-          //  if you dont want the users to se the keyboard type:
-            
-//            textField.endEditing(true)
         }
         
     }
@@ -145,7 +139,8 @@ class RegistrationInfoViewController: UIViewController, UIPickerViewDelegate, UI
         dbReference = Database.database().reference()
         let userRef = self.dbReference?.child("users").child(userEmail!)
         userRef?.child("employer").setValue(companyName.text)
-        userRef?.child("location").setValue(location.text)
+        userRef?.child("city").setValue(location.text)
+        userRef?.child("state").setValue(stateTextBox.text)
         userRef?.child("salary").setValue(salary.text)
         userRef?.child("studentLoans").setValue(loanValue.text)
         userRef?.child("ccbill").setValue(ccbillValue.text)
