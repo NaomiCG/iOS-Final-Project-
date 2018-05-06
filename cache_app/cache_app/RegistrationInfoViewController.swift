@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseDatabase
 
-class RegistrationInfoViewController: UIViewController {
+class RegistrationInfoViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var email: UILabel!
     @IBOutlet weak var birthday: UILabel!
@@ -17,6 +17,11 @@ class RegistrationInfoViewController: UIViewController {
     
     @IBOutlet weak var companyName: UITextField!
     @IBOutlet weak var location: UITextField!
+    
+    @IBOutlet weak var stateTextBox: UITextField!
+    @IBOutlet weak var stateDropDown: UIPickerView!
+    var stateList = ["AL","AK","AZ","AR","CA","CO","CT","DE","DC","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","MD","MA","MI","MN","MS","MO","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"]
+    
     @IBOutlet weak var salary: UILabel!
     @IBOutlet weak var salarySlider: UISlider!
     
@@ -96,6 +101,43 @@ class RegistrationInfoViewController: UIViewController {
     @IBAction func sliderChanged(_ sender: UISlider) {
         let currentValue:Int = Int(sender.value)
         salary.text = "$ \(currentValue)"
+    }
+    
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int{
+        return 1
+        
+    }
+    
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+        
+        return stateList.count
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+//        self.view.endEditing(true)
+        return stateList[row]
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        self.stateTextBox.text = self.stateList[row]
+        self.stateDropDown.isHidden = true
+        
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        print("it's in the function")
+        if textField == stateTextBox {
+            print("it knows it's the same")
+            self.stateDropDown.isHidden = false
+          //  if you dont want the users to se the keyboard type:
+            
+//            textField.endEditing(true)
+        }
+        
     }
     
     
