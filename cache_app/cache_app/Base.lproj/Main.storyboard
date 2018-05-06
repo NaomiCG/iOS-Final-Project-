@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="S5G-9U-ax8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="S5G-9U-ax8">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Italic</string>
+        </array>
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Thin</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="jEw-B8-Kit">
@@ -642,6 +651,14 @@
                                     <outlet property="delegate" destination="SJG-GH-Kej" id="hoj-Sb-dPH"/>
                                 </connections>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLp-CY-bDG">
+                                <rect key="frame" x="16" y="100" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="camera"/>
+                                <connections>
+                                    <action selector="openCameraButton:" destination="SJG-GH-Kej" eventType="touchUpInside" id="VO4-vC-VIR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="slp-Wb-aOz"/>
@@ -652,6 +669,7 @@
                         <outlet property="ccbillValue" destination="Vgg-hS-KxT" id="MJI-kZ-NVL"/>
                         <outlet property="companyName" destination="SsR-MH-W1v" id="XOr-nS-joz"/>
                         <outlet property="email" destination="aom-lg-YZJ" id="0EG-NE-4xh"/>
+                        <outlet property="imagePicked" destination="Mes-Tb-XCP" id="rWv-9Q-UjC"/>
                         <outlet property="loanLabel" destination="ONL-CD-1DY" id="yF0-9w-p6w"/>
                         <outlet property="loanValue" destination="bjA-ac-WMO" id="Oym-4Z-EWd"/>
                         <outlet property="location" destination="vU1-w7-7is" id="dDg-Yu-lEN"/>

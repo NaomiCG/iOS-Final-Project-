@@ -9,11 +9,12 @@
 import UIKit
 import FirebaseDatabase
 
-class RegistrationInfoViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+class RegistrationInfoViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var email: UILabel!
     @IBOutlet weak var birthday: UILabel!
     
+    @IBOutlet weak var imagePicked: UIImageView!
     
     @IBOutlet weak var companyName: UITextField!
     @IBOutlet weak var location: UITextField!
@@ -93,6 +94,25 @@ class RegistrationInfoViewController: UIViewController, UIPickerViewDelegate, UI
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    //code to bring up camera
+    //not working -- only because of computer??
+    @IBAction func openCameraButton(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            var imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .camera;
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    
+    
+    
+    
+    
     
     //Slider determines monthly salary
     @IBAction func sliderChanged(_ sender: UISlider) {
