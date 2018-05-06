@@ -74,9 +74,17 @@ class MainScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(userEmail)
+        dbReference = Database.database().reference()
+        
+        var userState:String? = ""
+        var taxRate:Double = 0.0
+        dbHandle = dbReference?.child("users").child(userEmail!).child("state").observe(.value, with: { (snapshot) in
+            userState = (snapshot.value as? String)!
+            taxRate = self.stateAbbreviations[userState!]!
+            print("tax rate within: \(String(describing: taxRate))")
+        })
 
-        // Do any additional setup after loading the view.
+        
         
     }
 
