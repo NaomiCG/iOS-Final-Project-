@@ -38,6 +38,10 @@ class RegistrationInfoViewController: UIViewController {
     @IBOutlet weak var removeRentButton: UIButton!
     @IBOutlet weak var removeUtilitiesButton: UIButton!
     
+    @IBOutlet weak var saveButton: UIButton!
+    
+    
+    
     //variable to recieve email info from previous view controller
     var userEmail:String?
     
@@ -90,9 +94,27 @@ class RegistrationInfoViewController: UIViewController {
     
     //Slider determines monthly salary
     @IBAction func sliderChanged(_ sender: UISlider) {
-        var currentValue = sender.value
+        let currentValue = sender.value
         salary.text = "$ \(currentValue)"
     }
+    
+    
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        dbReference = Database.database().reference()
+        let userRef = self.dbReference?.child("users").child(userEmail!)
+        userRef?.child("employer").setValue(companyName.text)
+        userRef?.child("location").setValue(location.text)
+        userRef?.child("salary").setValue(salary.text)
+        userRef?.child("studentLoans").setValue(loanValue.text)
+        userRef?.child("ccbill").setValue(ccbillValue.text)
+        userRef?.child("rent").setValue(rentValue.text)
+        userRef?.child("utilities").setValue(utilitiesValue.text)
+        
+    }
+    
+    
+    
+    
     
     //the following functions are to remove fields that aren't relevant to a user
     @IBAction func removeCCBill(_ sender: Any) {
