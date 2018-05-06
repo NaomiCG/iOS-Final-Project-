@@ -19,7 +19,7 @@ class MainScreenViewController: UIViewController {
         "CO" : 0.261575,    //COLORADO          -- 6    -- 0.011575
         "CT" : 0.3,         //CONNECTICUT       -- 7    -- 0.05
         "DE" : 0.3055,      //DELAWARE          -- 8    -- 0.0555
-        "DE" : 0.315,       //DC                -- 8.5  -- 0.0650
+        "DC" : 0.315,       //DC                -- 8.5  -- 0.0650
         "FL" : 0.25,        //FLORIDA           -- 9    -- 0.00
         "GA" : 0.31,        //GEORGIA           -- 10   -- 0.06
         "HI" : 0.3325,      //HAWAII            -- 11   -- 0.0825
