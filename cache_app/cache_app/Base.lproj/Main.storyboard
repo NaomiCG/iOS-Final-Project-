@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="S5G-9U-ax8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="S5G-9U-ax8">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Italic</string>
+        </array>
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Thin</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="jEw-B8-Kit">
@@ -198,7 +207,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="cache_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -353,6 +361,7 @@
                         <segue destination="SJG-GH-Kej" kind="show" identifier="SegueToRegistrationInfo" id="DO0-HO-CK2"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1948" y="815"/>
         </scene>
@@ -541,6 +550,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="saveButtonPressed:" destination="SJG-GH-Kej" eventType="touchUpInside" id="6NB-Zp-azl"/>
                                     <segue destination="hOd-od-WU8" kind="show" id="iLY-7z-pvk"/>
                                 </connections>
                             </button>
@@ -582,6 +592,7 @@
                         <outlet property="rentValue" destination="UAj-mg-vzG" id="3F9-q8-ZXx"/>
                         <outlet property="salary" destination="FIE-Ow-Aob" id="RvH-CE-sfC"/>
                         <outlet property="salarySlider" destination="7d5-3b-qSj" id="82u-Ac-E5q"/>
+                        <outlet property="saveButton" destination="Kx9-Ov-erb" id="4AG-LA-dEW"/>
                         <outlet property="utilitiesLabel" destination="YTL-U9-bgd" id="R3N-VC-Sff"/>
                         <outlet property="utilitiesValue" destination="gMm-tH-6YK" id="GNn-qA-qUd"/>
                     </connections>
@@ -618,6 +629,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="iLY-7z-pvk"/>
-        <segue reference="Kfi-CW-sTv"/>
+        <segue reference="Lc5-NA-1O3"/>
     </inferredMetricsTieBreakers>
 </document>
