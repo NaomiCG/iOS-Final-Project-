@@ -133,9 +133,7 @@ class RegistrationInfoViewController: UIViewController, UIPickerViewDelegate, UI
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        print("it's in the function")
         if textField == stateTextBox {
-            print("it knows it's the same")
             self.stateDropDown.isHidden = false
         }
         
@@ -148,7 +146,8 @@ class RegistrationInfoViewController: UIViewController, UIPickerViewDelegate, UI
         userRef?.child("employer").setValue(companyName.text)
         userRef?.child("city").setValue(location.text)
         userRef?.child("state").setValue(stateTextBox.text)
-        userRef?.child("salary").setValue(salary.text)
+        var salaryFormatted = salary.text?.replacingOccurrences(of: "$ ", with: "", options: NSString.CompareOptions.literal, range: nil)
+        userRef?.child("salary").setValue(salaryFormatted)
         userRef?.child("studentLoans").setValue(loanValue.text)
         userRef?.child("ccbill").setValue(ccbillValue.text)
         userRef?.child("rent").setValue(rentValue.text)

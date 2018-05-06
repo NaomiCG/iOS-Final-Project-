@@ -14,6 +14,7 @@ class MainScreenViewController: UIViewController {
     var dbReference : DatabaseReference?
     var dbHandle : DatabaseHandle?
     
+    
     var stateAbbreviations = [
         "AL" : 0.3,         //ALABAMA           -- 1    -- 0.05
         "AK" : 0.25,        //ALASKA            -- 2    -- 0.00
@@ -85,6 +86,14 @@ class MainScreenViewController: UIViewController {
             }
             
         })
+        
+        var income:String? = ""
+        dbHandle = dbReference?.child("users").child(userEmail!).child("salary").observe(.value, with: { (snapshot) in
+            income = snapshot.value as? String
+            print(taxRate * Double(income!)!)
+        })
+        
+        
 
         
         
