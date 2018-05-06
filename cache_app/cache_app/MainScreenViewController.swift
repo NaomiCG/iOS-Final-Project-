@@ -11,6 +11,7 @@ import FirebaseDatabase
 
 class MainScreenViewController: UIViewController {
     
+    @IBOutlet weak var taxPercentLabel: UILabel!
     var dbReference : DatabaseReference?
     var dbHandle : DatabaseHandle?
     
@@ -91,6 +92,8 @@ class MainScreenViewController: UIViewController {
         dbHandle = dbReference?.child("users").child(userEmail!).child("salary").observe(.value, with: { (snapshot) in
             income = snapshot.value as? String
             print(taxRate * Double(income!)!)
+            var taxPercentage = (taxRate * Double(income!)!)
+            self.taxPercentLabel.text = String (taxPercentage)
         })
         
         
