@@ -94,7 +94,7 @@ class RegistrationInfoViewController: UIViewController {
     
     //Slider determines monthly salary
     @IBAction func sliderChanged(_ sender: UISlider) {
-        let currentValue = sender.value
+        let currentValue:Int = Int(sender.value)
         salary.text = "$ \(currentValue)"
     }
     
