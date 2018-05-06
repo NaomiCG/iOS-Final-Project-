@@ -609,7 +609,7 @@
                                 </state>
                                 <connections>
                                     <action selector="saveButtonPressed:" destination="SJG-GH-Kej" eventType="touchUpInside" id="6NB-Zp-azl"/>
-                                    <segue destination="hOd-od-WU8" kind="show" id="iLY-7z-pvk"/>
+                                    <segue destination="hOd-od-WU8" kind="show" identifier="InfoToMainScreen" id="iLY-7z-pvk"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100.00" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gMm-tH-6YK">
@@ -707,7 +707,7 @@
         <image name="plus" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="A7e-E5-iSx"/>
+        <segue reference="iLY-7z-pvk"/>
         <segue reference="hVZ-LP-tYU"/>
         <segue reference="Kfi-CW-sTv"/>
     </inferredMetricsTieBreakers>

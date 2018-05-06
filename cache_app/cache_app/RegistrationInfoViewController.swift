@@ -100,6 +100,13 @@ class RegistrationInfoViewController: UIViewController, UIPickerViewDelegate, UI
         salary.text = "$ \(currentValue)"
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let correctEmail = self.email.text!.replacingOccurrences(of: ".", with: ",")
+        if let destination = segue.destination as? MainScreenViewController{
+            destination.userEmail = correctEmail
+        }
+    }
+    
     public func numberOfComponents(in pickerView: UIPickerView) -> Int{
         return 1
         
@@ -146,6 +153,8 @@ class RegistrationInfoViewController: UIViewController, UIPickerViewDelegate, UI
         userRef?.child("ccbill").setValue(ccbillValue.text)
         userRef?.child("rent").setValue(rentValue.text)
         userRef?.child("utilities").setValue(utilitiesValue.text)
+        
+        self.performSegue(withIdentifier: "InfoToMainScreen", sender: self)
         
     }
     

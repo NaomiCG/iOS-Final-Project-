@@ -76,12 +76,14 @@ class MainScreenViewController: UIViewController {
         
         dbReference = Database.database().reference()
         
-        var userState:String? = ""
+//        var userState:String? = ""
         var taxRate:Double = 0.0
         dbHandle = dbReference?.child("users").child(userEmail!).child("state").observe(.value, with: { (snapshot) in
-            userState = (snapshot.value as? String)!
-            taxRate = self.stateAbbreviations[userState!]!
-            print("tax rate within: \(String(describing: taxRate))")
+            if let userState = (snapshot.value as? String){
+                taxRate = self.stateAbbreviations[userState]!
+                print("tax rate within: \(String(describing: taxRate))")
+            }
+            
         })
 
         
