@@ -440,7 +440,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Location" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vU1-w7-7is">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="City" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vU1-w7-7is">
                                 <rect key="frame" x="16" y="288" width="205" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -568,6 +568,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k8c-KU-zBC">
+                                <rect key="frame" x="229" y="288" width="42" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="SJG-GH-Kej" id="JOG-dJ-ZgI"/>
+                                </connections>
+                            </textField>
+                            <pickerView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JEW-8h-LG5">
+                                <rect key="frame" x="229" y="221" width="42" height="59"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="SJG-GH-Kej" id="AG3-i5-t6n"/>
+                                    <outlet property="delegate" destination="SJG-GH-Kej" id="hoj-Sb-dPH"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="slp-Wb-aOz"/>
@@ -593,13 +611,15 @@
                         <outlet property="salary" destination="FIE-Ow-Aob" id="RvH-CE-sfC"/>
                         <outlet property="salarySlider" destination="7d5-3b-qSj" id="82u-Ac-E5q"/>
                         <outlet property="saveButton" destination="Kx9-Ov-erb" id="4AG-LA-dEW"/>
+                        <outlet property="stateDropDown" destination="JEW-8h-LG5" id="d6d-jX-rNt"/>
+                        <outlet property="stateTextBox" destination="k8c-KU-zBC" id="ddZ-nU-cfy"/>
                         <outlet property="utilitiesLabel" destination="YTL-U9-bgd" id="R3N-VC-Sff"/>
                         <outlet property="utilitiesValue" destination="gMm-tH-6YK" id="GNn-qA-qUd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sh0-HK-fNK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1105" y="814"/>
+            <point key="canvasLocation" x="-1106.4000000000001" y="813.54679802955673"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xE9-B9-RMV">
