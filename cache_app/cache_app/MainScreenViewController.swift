@@ -11,8 +11,34 @@ import FirebaseDatabase
 
 class MainScreenViewController: UIViewController {
     
+    //incomes labels
     @IBOutlet weak var grossIncomeLabel: UILabel!
+    @IBOutlet weak var netIncomeLabel: UILabel!
+    
+    //state and city labels
+    @IBOutlet weak var stateLabel: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
+    
+    //taxes labels
     @IBOutlet weak var taxPercentLabel: UILabel!
+    @IBOutlet weak var taxDollarLabel: UILabel!
+    
+    //rent and utilities labels
+    @IBOutlet weak var rentPercentLabel: UILabel!
+    @IBOutlet weak var rentDollarLabel: UILabel!
+    
+    //loan payments labels
+    @IBOutlet weak var loanPercentLabel: UILabel!
+    @IBOutlet weak var loanDollarLabels: UILabel!
+    
+    //personal expenses label
+    @IBOutlet weak var personalPercentLabel: UILabel!
+    @IBOutlet weak var personalDollarLabel: UILabel!
+    
+    
+    
+    
+    
     var dbReference : DatabaseReference?
     var dbHandle : DatabaseHandle?
     
@@ -79,24 +105,75 @@ class MainScreenViewController: UIViewController {
         
         dbReference = Database.database().reference()
         
-//        var userState:String? = ""
         var taxRate:Double = 0.0
         dbHandle = dbReference?.child("users").child(userEmail!).child("state").observe(.value, with: { (snapshot) in
             if let userState = (snapshot.value as? String){
                 taxRate = self.stateAbbreviations[userState]!
                 print("tax rate within: \(String(describing: taxRate))")
             }
-            
         })
         
         var income:String? = ""
         dbHandle = dbReference?.child("users").child(userEmail!).child("salary").observe(.value, with: { (snapshot) in
             income = snapshot.value as? String
             print(taxRate * Double(income!)!)
-            var taxPercentage = (taxRate * Double(income!)!)
-            self.taxPercentLabel.text = String (taxPercentage)
             
+            
+            /////////////////////////////////////////////////////////////
+            //incomes labels
+                //grossIncomeLabel
             self.grossIncomeLabel.text = income
+                //netIncomeLabel
+            //self.netIncomeLabel.text = String (Double (income)! - (Double (income)! * Double (taxRate)) )
+            /////////////////////////////////////////////////////////////
+            
+            
+            /////////////////////////////////////////////////////////////
+            //state and city labels
+                //stateLabel
+                //cityLabel
+            /////////////////////////////////////////////////////////////
+            
+            
+            /////////////////////////////////////////////////////////////
+            //taxes labels
+            
+            //taxPercentLabel
+            self.taxPercentLabel.text = String ((Double (taxRate) * 100))
+            //taxDollarLabel
+            self.taxDollarLabel.text = String (Double (taxRate) * Double(income!)!)
+            /////////////////////////////////////////////////////////////
+            
+            
+            /////////////////////////////////////////////////////////////
+            //rent and utilities labels
+                //rentPercentLabel
+                //rentDollarLabel
+            /////////////////////////////////////////////////////////////
+            
+            
+            
+            /////////////////////////////////////////////////////////////
+            //loan payments labels
+                //loanPercentLabel
+                //loanDollarLabel
+            /////////////////////////////////////////////////////////////
+            
+            
+            /////////////////////////////////////////////////////////////
+            //personal expenses label
+                //personalPercentLabel
+                //personalDollarLabel
+            /////////////////////////////////////////////////////////////
+            
+            
+            
+            
+            //set the gross income label to total salary
+            //self.grossIncomeLabel.text = income
+            
+            //set the net income label to total salary minus total tax
+            //self.netIncomeLabel.text = (income - (taxRate * income))
         })
         
         
