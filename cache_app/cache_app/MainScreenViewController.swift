@@ -36,12 +36,8 @@ class MainScreenViewController: UIViewController {
     @IBOutlet weak var personalDollarLabel: UILabel!
     
     
-    
-    
-    
     var dbReference : DatabaseReference?
     var dbHandle : DatabaseHandle?
-    
     
     var stateAbbreviations = [
         "AL" : 0.3,         //ALABAMA           -- 1    -- 0.05
@@ -126,6 +122,26 @@ class MainScreenViewController: UIViewController {
             city = snapshot.value as? String
             self.cityLabel.text = city
         })
+        
+        //rent and utilities
+        var rent:Double? = 0.0
+        dbHandle = dbReference?.child("users").child(userEmail!).child("rent").observe(.value, with: { (snapshot) in
+            rent = snapshot.value as? Double
+            //self.rentDollarLabel.text = rent
+            //rents = rent!
+        })
+        
+        
+        var utilities:Double? = 0.0
+        dbHandle = dbReference?.child("users").child(userEmail!).child("utilities").observe(.value, with: { (snapshot) in
+            utilities = snapshot.value as? Double
+            
+            var totalRent = utilities! + rent!
+            
+            self.rentDollarLabel.text = String (totalRent)
+        })
+        
+        
         
         var income:String? = ""
         dbHandle = dbReference?.child("users").child(userEmail!).child("salary").observe(.value, with: { (snapshot) in
