@@ -8,9 +8,11 @@
 
 import UIKit
 import FirebaseDatabase
+import Charts
 
 class MainScreenViewController: UIViewController {
     
+    @IBOutlet weak var PieChart: PieChartView!
     //incomes labels
     @IBOutlet weak var grossIncomeLabel: UILabel!
     var grossIncomeVar:String = ""
@@ -110,6 +112,14 @@ class MainScreenViewController: UIViewController {
     //variable to recieve email info from previous view controller
     var userEmail:String?
     
+    var taxDataEntry = PieChartDataEntry(value: 33.00)
+    var rentDataEntry = PieChartDataEntry(value: 41.25)
+    var loanDataEntry = PieChartDataEntry(value: 10.00)
+    var personalDataEntry = PieChartDataEntry(value: 15.75)
+    
+    var numberOfDownloadsDataEntries = [PieChartDataEntry]()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -159,7 +169,34 @@ class MainScreenViewController: UIViewController {
             
         })
         
+        self.rentDollarLabel.text = "1650.00"
+        self.rentPercentLabel.text = "41.25"
+        self.loanDollarLabels.text = "400.00"
+        self.loanPercentLabel.text = "10"
+        self.personalDollarLabel.text = "630.00"
+        self.personalPercentLabel.text = "15.75"
+        
+//        var taxDataEntry = PieChartDataEntry(value: 33.00)
+//        var rentDataEntry = PieChartDataEntry(value: 41.25)
+//        var loanDataEntry = PieChartDataEntry(value: 10.00)
+//        var personalDataEntry = PieChartDataEntry(value: 15.75)
+        
+        
+        taxDataEntry.value = 33.00
+        taxDataEntry.label = "Taxes"
+        rentDataEntry.value = 41.25
+        rentDataEntry.label = "Rent"
+        loanDataEntry.value = 10.00
+        loanDataEntry.label = "Loans"
+        personalDataEntry.value = 15.75
+        personalDataEntry.label = "Remains"
+        
+        numberOfDownloadsDataEntries = [taxDataEntry, rentDataEntry, loanDataEntry, personalDataEntry]
+        
+       updateChartData()
+        
         /*
+         
          //rent
          var rent:String? = ""
          dbHandle = dbReference?.child("users").child(userEmail!).child("rent").observe(.value, with: { (snapshot) in
@@ -182,25 +219,7 @@ class MainScreenViewController: UIViewController {
          //self.rentPercentVar.text = String (rentPercent)
          })
          */
-        
-        self.rentDollarLabel.text = "1650.00"
-        self.rentPercentLabel.text = "41.25"
-        self.loanDollarLabels.text = "400.00"
-        self.loanPercentLabel.text = "10"
-        self.personalDollarLabel.text = "630.00"
-        self.personalPercentLabel.text = "15.75"
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
         
         /*
          //rent and utilities
@@ -265,6 +284,17 @@ class MainScreenViewController: UIViewController {
         
         
         
+    }
+    
+    func updateChartData(){
+        
+        let chartDataSet = PieChartDataSet(values: numberOfDownloadsDataEntries, label: nil)
+        let chartData = PieChartData(dataSet: chartDataSet)
+        
+        let colors = [UIColor(named: "Rent"), UIColor(named: "Tax"), UIColor(named: "Loan"), UIColor(named: "Color")]
+
+        chartDataSet.colors = colors as! [NSUIColor]
+        PieChart.data = chartData
     }
 
     override func didReceiveMemoryWarning() {
