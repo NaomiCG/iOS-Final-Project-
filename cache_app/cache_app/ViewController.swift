@@ -9,11 +9,8 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
-import Charts
 
 class ViewController: UIViewController {
-    
-    
     @IBOutlet weak var first: UITextField!
     @IBOutlet weak var last: UITextField!
     @IBOutlet weak var email: UITextField!

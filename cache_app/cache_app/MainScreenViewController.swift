@@ -8,13 +8,8 @@
 
 import UIKit
 import FirebaseDatabase
-import Charts
 
 class MainScreenViewController: UIViewController {
-    
-    
-    //pie chart
-    @IBOutlet weak var pieChart: PieChartView!
     
     //incomes labels
     @IBOutlet weak var grossIncomeLabel: UILabel!
@@ -195,14 +190,7 @@ class MainScreenViewController: UIViewController {
         self.personalDollarLabel.text = "630.00"
         self.personalPercentLabel.text = "15.75"
         
-        var rentData = PieChartDataEntry(value: 41.25)
-        var taxData = PieChartDataEntry(value: 33.00)
-        var loanData = PieChartDataEntry(value: 10)
-        var remains = PieChartDataEntry(value: 15.75)
-        func updateChartData(){
-            
-            
-        }
+        
         
         
         
@@ -295,11 +283,4 @@ class MainScreenViewController: UIViewController {
     }
     */
 
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated);
-        
-        print("**** \(self.navigationController) ****")
-    }
-    
 }

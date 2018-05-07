@@ -38,16 +38,16 @@
 			remoteGlobalIDString = 49D1BE3E7A73754F2364B9E3;
 			remoteInfo = cache_app;
 		};
-		A9D83CC520A08DF5005615BC /* PBXContainerItemProxy */ = {
+		FC932BAA20A081E4001E7F82 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A9D83CC020A08DF5005615BC /* Charts.xcodeproj */;
+			containerPortal = FC932BA520A081E3001E7F82 /* Charts.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 65AD9E95D9ED4DC0BD73A743;
 			remoteInfo = Charts;
 		};
-		A9D83CC720A08DF5005615BC /* PBXContainerItemProxy */ = {
+		FC932BAC20A081E4001E7F82 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A9D83CC020A08DF5005615BC /* Charts.xcodeproj */;
+			containerPortal = FC932BA520A081E3001E7F82 /* Charts.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 1CBBC58C6CE1EBEE9852CE41;
 			remoteInfo = ChartsTests;
@@ -97,7 +97,6 @@
 		72786AF6808C3B251BAE812B /* Pods_cache_appUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cache_appUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		842E295F2180C2E60BEC9891 /* Pods-cache_appUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cache_appUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cache_appUITests/Pods-cache_appUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A98B4C77209A84D90021917F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		A9D83CC020A08DF5005615BC /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = ../../Desktop/Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		BB896A3469F2ED3A02538BAB /* Pods-cache_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cache_app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cache_app/Pods-cache_app.debug.xcconfig"; sourceTree = "<group>"; };
 		D66582FFE10598CC7FBC5B22 /* Pods_cache_appTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cache_appTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7556C68868EA566CB7A204E /* Pods-cache_appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cache_appTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-cache_appTests/Pods-cache_appTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -105,6 +104,7 @@
 		EFCEDF31678516E2CEF697AA /* Pods-cache_appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cache_appTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cache_appTests/Pods-cache_appTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F96A7B6320965CA00043D34C /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		F96A7B67209A10F90043D34C /* RegistrationInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInfoViewController.swift; sourceTree = "<group>"; };
+		FC932BA520A081E3001E7F82 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = ../../Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,7 +155,7 @@
 		49D1B2398140303A67AE36D8 = {
 			isa = PBXGroup;
 			children = (
-				A9D83CC020A08DF5005615BC /* Charts.xcodeproj */,
+				FC932BA520A081E3001E7F82 /* Charts.xcodeproj */,
 				49D1BD43D204A21160C7C2DC /* Products */,
 				49D1B2185F441AE6151E1124 /* cache_app */,
 				49D1B88017A54AB347CACFE9 /* cache_appTests */,
@@ -216,11 +216,11 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		A9D83CC120A08DF5005615BC /* Products */ = {
+		FC932BA620A081E3001E7F82 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A9D83CC620A08DF5005615BC /* Charts.framework */,
-				A9D83CC820A08DF5005615BC /* ChartsTests.xctest */,
+				FC932BAB20A081E4001E7F82 /* Charts.framework */,
+				FC932BAD20A081E4001E7F82 /* ChartsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -310,8 +310,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = A9D83CC120A08DF5005615BC /* Products */;
-					ProjectRef = A9D83CC020A08DF5005615BC /* Charts.xcodeproj */;
+					ProductGroup = FC932BA620A081E3001E7F82 /* Products */;
+					ProjectRef = FC932BA520A081E3001E7F82 /* Charts.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -324,18 +324,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		A9D83CC620A08DF5005615BC /* Charts.framework */ = {
+		FC932BAB20A081E4001E7F82 /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Charts.framework;
-			remoteRef = A9D83CC520A08DF5005615BC /* PBXContainerItemProxy */;
+			remoteRef = FC932BAA20A081E4001E7F82 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		A9D83CC820A08DF5005615BC /* ChartsTests.xctest */ = {
+		FC932BAD20A081E4001E7F82 /* ChartsTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = ChartsTests.xctest;
-			remoteRef = A9D83CC720A08DF5005615BC /* PBXContainerItemProxy */;
+			remoteRef = FC932BAC20A081E4001E7F82 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
