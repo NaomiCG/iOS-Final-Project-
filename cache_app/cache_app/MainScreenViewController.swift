@@ -13,27 +13,40 @@ class MainScreenViewController: UIViewController {
     
     //incomes labels
     @IBOutlet weak var grossIncomeLabel: UILabel!
+    var grossIncomeVar:Double = 0.0
     @IBOutlet weak var netIncomeLabel: UILabel!
+    var netIncomeVar:Double = 0.0
     
     //state and city labels
     @IBOutlet weak var stateLabel: UILabel!
+    var stateVar:String = ""
     @IBOutlet weak var cityLabel: UILabel!
+    var cityVar:String = ""
     
     //taxes labels
     @IBOutlet weak var taxPercentLabel: UILabel!
+    var taxPercentVar:Double = 0.0
     @IBOutlet weak var taxDollarLabel: UILabel!
+    var taxDollarVar:Double = 0.0
     
     //rent and utilities labels
     @IBOutlet weak var rentPercentLabel: UILabel!
+    var rentPercentVar:Double = 0.0
     @IBOutlet weak var rentDollarLabel: UILabel!
+    var utilitiesDollarVar:Double = 0.0
+    var rentDollarVar:Double = 0.0
     
     //loan payments labels
     @IBOutlet weak var loanPercentLabel: UILabel!
+    var loanPercentVar:Double = 0.0
     @IBOutlet weak var loanDollarLabels: UILabel!
+    var loanDollarVar:Double = 0.0
     
     //personal expenses label
     @IBOutlet weak var personalPercentLabel: UILabel!
+    var personalPercentVar:Double = 0.0
     @IBOutlet weak var personalDollarLabel: UILabel!
+    var personalDollarVar:Double = 0.0
     
     
     var dbReference : DatabaseReference?
@@ -114,6 +127,7 @@ class MainScreenViewController: UIViewController {
         dbHandle = dbReference?.child("users").child(userEmail!).child("state").observe(.value, with: { (snapshot) in
             state = snapshot.value as? String
             self.stateLabel.text = state
+            self.stateVar = state!
         })
         
         //city
@@ -121,28 +135,52 @@ class MainScreenViewController: UIViewController {
         dbHandle = dbReference?.child("users").child(userEmail!).child("city").observe(.value, with: { (snapshot) in
             city = snapshot.value as? String
             self.cityLabel.text = city
+            self.cityVar = city!
         })
         
+        var grossIncome:String? = ""
+        dbHandle = dbReference?.child("users").child(userEmail!).child("salary").observe(.value, with: { (snapshot) in
+            grossIncome = snapshot.value as? String
+            
+            self.grossIncomeLabel.text = grossIncome
+        
+        })
+        
+        /*
         //rent and utilities
         var rent:Double? = 0.0
         dbHandle = dbReference?.child("users").child(userEmail!).child("rent").observe(.value, with: { (snapshot) in
             rent = snapshot.value as? Double
             //self.rentDollarLabel.text = rent
             //rents = rent!
+            self.rentDollarVar = rent!
         })
+        */
         
-        
+        /*
         var utilities:Double? = 0.0
         dbHandle = dbReference?.child("users").child(userEmail!).child("utilities").observe(.value, with: { (snapshot) in
             utilities = snapshot.value as? Double
             
-            var totalRent = utilities! + rent!
+            self.utilitiesDollarVar = utilities!
             
-            self.rentDollarLabel.text = String (totalRent)
+            //var totalRent = utilities! + rent!
+            
+            self.rentDollarLabel.text = String (self.rentDollarVar + self.utilitiesDollarVar)
         })
+         */
         
+        /*
+        //student loans
+        var loanValue:Double? = 0.0
+        dbHandle = dbReference?.child("users").child(userEmail!).child("loanValue").observe(.value, with: { (snapshot) in
+            loanValue = snapshot.value as? Double
+            
+            self.loanDollarVar = loanValue!
+        })
+        */
         
-        
+        /*
         var income:String? = ""
         dbHandle = dbReference?.child("users").child(userEmail!).child("salary").observe(.value, with: { (snapshot) in
             income = snapshot.value as? String
@@ -166,7 +204,7 @@ class MainScreenViewController: UIViewController {
             /////////////////////////////////////////////////////////////
             
         })
-        
+        */
         
 
         
