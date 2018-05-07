@@ -13,7 +13,7 @@ class MainScreenViewController: UIViewController {
     
     //incomes labels
     @IBOutlet weak var grossIncomeLabel: UILabel!
-    var grossIncomeVar:Double = 0.0
+    var grossIncomeVar:String = ""
     @IBOutlet weak var netIncomeLabel: UILabel!
     var netIncomeVar:Double = 0.0
     
@@ -114,6 +114,7 @@ class MainScreenViewController: UIViewController {
         
         dbReference = Database.database().reference()
         
+        //tax rate
         var taxRate:Double = 0.0
         dbHandle = dbReference?.child("users").child(userEmail!).child("state").observe(.value, with: { (snapshot) in
             if let userState = (snapshot.value as? String){
@@ -138,13 +139,38 @@ class MainScreenViewController: UIViewController {
             self.cityVar = city!
         })
         
-        var grossIncome:String? = ""
+        //gross and net income
+        var income:String? = ""
         dbHandle = dbReference?.child("users").child(userEmail!).child("salary").observe(.value, with: { (snapshot) in
-            grossIncome = snapshot.value as? String
+            income = snapshot.value as? String
             
-            self.grossIncomeLabel.text = grossIncome
-        
+            //gross income
+            self.grossIncomeLabel.text = income
+            self.grossIncomeVar = income!
+            
+            //net income
+            let netIncome = Double(income!)! - (Double (taxRate) * Double(income!)!)
+            self.netIncomeLabel.text = String (netIncome)
+            
+            //tax
+            self.taxPercentLabel.text = String ((Double (taxRate) * 100))
+            self.taxDollarLabel.text = String (Double (taxRate) * Double(income!)!)
+            
         })
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         /*
         //rent and utilities
