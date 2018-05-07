@@ -124,7 +124,8 @@ class MainScreenViewController: UIViewController {
                 //grossIncomeLabel
             self.grossIncomeLabel.text = income
                 //netIncomeLabel
-            //self.netIncomeLabel.text = String (Double (income)! - (Double (income)! * Double (taxRate)) )
+            var netIncome = Double(income!)! - (Double (taxRate) * Double(income!)!)
+            self.netIncomeLabel.text = String (netIncome)
             /////////////////////////////////////////////////////////////
             
             
