@@ -209,34 +209,25 @@ class RegistrationInfoViewController: UIViewController, UIPickerViewDelegate, UI
         removeUtilitiesButton.isHidden = true
         expensesCount -= 1
     }
-    
-    //for when the user wants to add an additional living expense, ie wifi or cell phone bill etc
-    @IBAction func addLivingExpense(_ sender: Any) {
-        let alert = UIAlertController(title: "Additional Living Expense", message: "Enter the type and amount of expense", preferredStyle: .alert)
-        alert.addTextField{ (textField) in
-            textField.text = "Type of Expense"
-        }
-        alert.addTextField{ (textField) in
-            textField.text = "Monthly Amount"
-        }
+    @IBAction func loanButtonClicked(_ sender: Any) {
+        let alert = UIAlertController(title: "What's a loan?", message: "the lending of money from one individual, organization or entity to another individual, organization or entity.", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
-            let textField = alert?.textFields![0]
-            let otherTextField = alert?.textFields![1]
-            print("Text field: \(textField?.text) & \(otherTextField?.text)")
         }))
         
         self.present(alert, animated:true, completion:nil)
         
-        //happening too fast - need to figure out how to wait
-        //think i need to move it to another function but haven't figured that out
+    }
+    
+    //for when the user wants to add an additional living expense, ie wifi or cell phone bill etc
+    @IBAction func addLivingExpense(_ sender: Any) {
+        let alert = UIAlertController(title: "What's included in living expenses?", message: "rent, utilities (water, gas, electricity, wifi), phone bill, etc.", preferredStyle: .alert)
         
-        let yValue = 600 + expensesCount*46
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+        }))
         
-        let label = UILabel(frame:CGRect(x:16, y:yValue, width:108, height:21))
-        label.text = alert.textFields?[0].text
-        label.font = UIFont(name:"HelveticaNeue-Thin", size:label.font.pointSize)
-        self.view.addSubview(label)
+        self.present(alert, animated:true, completion:nil)
+        
         
     }
     
