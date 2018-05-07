@@ -13,30 +13,40 @@ class MainScreenViewController: UIViewController {
     
     //incomes labels
     @IBOutlet weak var grossIncomeLabel: UILabel!
+    var grossIncomeVar:String = ""
     @IBOutlet weak var netIncomeLabel: UILabel!
+    var netIncomeVar:Double = 0.0
     
     //state and city labels
     @IBOutlet weak var stateLabel: UILabel!
+    var stateVar:String = ""
     @IBOutlet weak var cityLabel: UILabel!
+    var cityVar:String = ""
     
     //taxes labels
     @IBOutlet weak var taxPercentLabel: UILabel!
+    var taxPercentVar:Double = 0.0
     @IBOutlet weak var taxDollarLabel: UILabel!
+    var taxDollarVar:Double = 0.0
     
     //rent and utilities labels
     @IBOutlet weak var rentPercentLabel: UILabel!
+    var rentPercentVar:Double = 0.0
     @IBOutlet weak var rentDollarLabel: UILabel!
+    var utilitiesDollarVar:Double = 0.0
+    var rentDollarVar:Double = 0.0
     
     //loan payments labels
     @IBOutlet weak var loanPercentLabel: UILabel!
+    var loanPercentVar:Double = 0.0
     @IBOutlet weak var loanDollarLabels: UILabel!
+    var loanDollarVar:Double = 0.0
     
     //personal expenses label
     @IBOutlet weak var personalPercentLabel: UILabel!
+    var personalPercentVar:Double = 0.0
     @IBOutlet weak var personalDollarLabel: UILabel!
-    
-    
-    
+    var personalDollarVar:Double = 0.0
     
     
     var dbReference : DatabaseReference?
@@ -99,12 +109,13 @@ class MainScreenViewController: UIViewController {
     
     //variable to recieve email info from previous view controller
     var userEmail:String?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         dbReference = Database.database().reference()
         
+        //tax rate
         var taxRate:Double = 0.0
         dbHandle = dbReference?.child("users").child(userEmail!).child("state").observe(.value, with: { (snapshot) in
             if let userState = (snapshot.value as? String){
@@ -113,72 +124,145 @@ class MainScreenViewController: UIViewController {
             }
         })
         
+        //state
+        var state:String? = ""
+        dbHandle = dbReference?.child("users").child(userEmail!).child("state").observe(.value, with: { (snapshot) in
+            state = snapshot.value as? String
+            self.stateLabel.text = state
+            self.stateVar = state!
+        })
+        
+        //city
+        var city:String? = ""
+        dbHandle = dbReference?.child("users").child(userEmail!).child("city").observe(.value, with: { (snapshot) in
+            city = snapshot.value as? String
+            self.cityLabel.text = city
+            self.cityVar = city!
+        })
+        
+        //gross and net income
         var income:String? = ""
         dbHandle = dbReference?.child("users").child(userEmail!).child("salary").observe(.value, with: { (snapshot) in
             income = snapshot.value as? String
-            print(taxRate * Double(income!)!)
             
-            
-            /////////////////////////////////////////////////////////////
-            //incomes labels
-                //grossIncomeLabel
+            //gross income
             self.grossIncomeLabel.text = income
-                //netIncomeLabel
-            var netIncome = Double(income!)! - (Double (taxRate) * Double(income!)!)
+            self.grossIncomeVar = income!
+            
+            //net income
+            let netIncome = Double(income!)! - (Double (taxRate) * Double(income!)!)
             self.netIncomeLabel.text = String (netIncome)
-            /////////////////////////////////////////////////////////////
             
-            
-            /////////////////////////////////////////////////////////////
-            //state and city labels
-                //stateLabel
-                //cityLabel
-            /////////////////////////////////////////////////////////////
-            
-            
-            /////////////////////////////////////////////////////////////
-            //taxes labels
-            
-            //taxPercentLabel
+            //tax
             self.taxPercentLabel.text = String ((Double (taxRate) * 100))
-            //taxDollarLabel
             self.taxDollarLabel.text = String (Double (taxRate) * Double(income!)!)
-            /////////////////////////////////////////////////////////////
             
-            
-            /////////////////////////////////////////////////////////////
-            //rent and utilities labels
-                //rentPercentLabel
-                //rentDollarLabel
-            /////////////////////////////////////////////////////////////
-            
-            
-            
-            /////////////////////////////////////////////////////////////
-            //loan payments labels
-                //loanPercentLabel
-                //loanDollarLabel
-            /////////////////////////////////////////////////////////////
-            
-            
-            /////////////////////////////////////////////////////////////
-            //personal expenses label
-                //personalPercentLabel
-                //personalDollarLabel
-            /////////////////////////////////////////////////////////////
-            
-            
-            
-            
-            //set the gross income label to total salary
-            //self.grossIncomeLabel.text = income
-            
-            //set the net income label to total salary minus total tax
-            //self.netIncomeLabel.text = (income - (taxRate * income))
         })
         
+        /*
+         //rent
+         var rent:String? = ""
+         dbHandle = dbReference?.child("users").child(userEmail!).child("rent").observe(.value, with: { (snapshot) in
+         rent = snapshot.value as? String
+         self.rentDollarLabel.text = rent
+         //self.rentDollarVar = rent
+         
+         //let rentPercent = Double (rent)! / Double (grossIncomeVar)!
+         //self.rentPercentVar.text = String (rentPercent)
+         })
+         
+         //student loans
+         var studentLoans:String? = ""
+         dbHandle = dbReference?.child("users").child(userEmail!).child("studentLoans").observe(.value, with: { (snapshot) in
+         studentLoans = snapshot.value as? String
+         self.loanDollarLabels.text = studentLoans
+         //self.rentDollarVar = rent
+         
+         //let rentPercent = Double (rent)! / Double (grossIncomeVar)!
+         //self.rentPercentVar.text = String (rentPercent)
+         })
+         */
         
-
+        self.rentDollarLabel.text = "1650.00"
+        self.rentPercentLabel.text = "41.25"
+        self.loanDollarLabels.text = "400.00"
+        self.loanPercentLabel.text = "10"
+        self.personalDollarLabel.text = "630.00"
+        self.personalPercentLabel.text = "15.75"
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /*
+         //rent and utilities
+         var rent:Double? = 0.0
+         dbHandle = dbReference?.child("users").child(userEmail!).child("rent").observe(.value, with: { (snapshot) in
+         rent = snapshot.value as? Double
+         //self.rentDollarLabel.text = rent
+         //rents = rent!
+         self.rentDollarVar = rent!
+         })
+         */
+        
+        /*
+         var utilities:Double? = 0.0
+         dbHandle = dbReference?.child("users").child(userEmail!).child("utilities").observe(.value, with: { (snapshot) in
+         utilities = snapshot.value as? Double
+         
+         self.utilitiesDollarVar = utilities!
+         
+         //var totalRent = utilities! + rent!
+         
+         self.rentDollarLabel.text = String (self.rentDollarVar + self.utilitiesDollarVar)
+         })
+         */
+        
+        /*
+         //student loans
+         var loanValue:Double? = 0.0
+         dbHandle = dbReference?.child("users").child(userEmail!).child("loanValue").observe(.value, with: { (snapshot) in
+         loanValue = snapshot.value as? Double
+         
+         self.loanDollarVar = loanValue!
+         })
+         */
+        
+        /*
+         var income:String? = ""
+         dbHandle = dbReference?.child("users").child(userEmail!).child("salary").observe(.value, with: { (snapshot) in
+         income = snapshot.value as? String
+         print(taxRate * Double(income!)!)
+         
+         /////////////////////////////////////////////////////////////
+         //incomes labels
+         //grossIncomeLabel
+         self.grossIncomeLabel.text = income
+         //netIncomeLabel
+         let netIncome = Double(income!)! - (Double (taxRate) * Double(income!)!)
+         self.netIncomeLabel.text = String (netIncome)
+         /////////////////////////////////////////////////////////////
+         
+         /////////////////////////////////////////////////////////////
+         //taxes labels
+         //taxPercentLabel
+         self.taxPercentLabel.text = String ((Double (taxRate) * 100))
+         //taxDollarLabel
+         self.taxDollarLabel.text = String (Double (taxRate) * Double(income!)!)
+         /////////////////////////////////////////////////////////////
+         
+         })
+         */
+        
+        
         
         
     }
