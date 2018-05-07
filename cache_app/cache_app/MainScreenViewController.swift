@@ -158,7 +158,36 @@ class MainScreenViewController: UIViewController {
             
         })
         
+        /*
+        //rent
+        var rent:String? = ""
+        dbHandle = dbReference?.child("users").child(userEmail!).child("rent").observe(.value, with: { (snapshot) in
+            rent = snapshot.value as? String
+            self.rentDollarLabel.text = rent
+            //self.rentDollarVar = rent
+            
+            //let rentPercent = Double (rent)! / Double (grossIncomeVar)!
+            //self.rentPercentVar.text = String (rentPercent)
+        })
         
+        //student loans
+        var studentLoans:String? = ""
+        dbHandle = dbReference?.child("users").child(userEmail!).child("studentLoans").observe(.value, with: { (snapshot) in
+            studentLoans = snapshot.value as? String
+            self.loanDollarLabels.text = studentLoans
+            //self.rentDollarVar = rent
+            
+            //let rentPercent = Double (rent)! / Double (grossIncomeVar)!
+            //self.rentPercentVar.text = String (rentPercent)
+        })
+        */
+        
+        self.rentDollarLabel.text = "1650.00"
+        self.rentPercentLabel.text = "41.25"
+        self.loanDollarLabels.text = "400.00"
+        self.loanPercentLabel.text = "10"
+        self.personalDollarLabel.text = "630.00"
+        self.personalPercentLabel.text = "15.75"
         
         
         
