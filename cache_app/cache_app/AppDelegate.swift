@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import Charts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
