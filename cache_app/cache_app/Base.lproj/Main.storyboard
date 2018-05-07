@@ -391,11 +391,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Txr-8T-fCY" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="251" width="343" height="218"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="tRt-R1-0kx"/>
                     </view>
                     <connections>
+                        <outlet property="PieChart" destination="Txr-8T-fCY" id="6uG-fm-s6T"/>
                         <outlet property="cityLabel" destination="8bq-fL-PHW" id="XYR-H5-3AY"/>
                         <outlet property="grossIncomeLabel" destination="r8K-zW-d7o" id="eCX-r3-eeZ"/>
                         <outlet property="loanDollarLabels" destination="07J-bw-wQ0" id="uWZ-3f-I3l"/>
@@ -870,7 +876,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="iLY-7z-pvk"/>
-        <segue reference="hVZ-LP-tYU"/>
+        <segue reference="Oz9-xO-npQ"/>
         <segue reference="Lc5-NA-1O3"/>
     </inferredMetricsTieBreakers>
 </document>
