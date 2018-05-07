@@ -184,7 +184,7 @@
         <scene sceneID="DtU-gb-cS9">
             <objects>
                 <viewController id="hOd-od-WU8" customClass="MainScreenViewController" customModule="cache_app" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="b0G-So-s6k">
+                    <view key="view" contentMode="scaleToFill" id="b0G-So-s6k" customClass="PieChartView" customModule="Charts">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -391,6 +391,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n6n-qg-TOJ" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="36" y="225" width="303" height="244"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="tRt-R1-0kx"/>
@@ -403,6 +408,7 @@
                         <outlet property="netIncomeLabel" destination="FEw-vu-j4a" id="oVg-p8-Bv8"/>
                         <outlet property="personalDollarLabel" destination="dAt-nt-XmQ" id="EuK-zF-FwK"/>
                         <outlet property="personalPercentLabel" destination="GAy-0n-nG6" id="HhB-Dd-paa"/>
+                        <outlet property="pieChart" destination="n6n-qg-TOJ" id="LlS-62-B8h"/>
                         <outlet property="rentDollarLabel" destination="Tn5-If-wmK" id="8HK-EU-neT"/>
                         <outlet property="rentPercentLabel" destination="d6Z-8o-Qe0" id="Jkq-FZ-2cO"/>
                         <outlet property="stateLabel" destination="CSO-OC-Sw5" id="LeD-mh-sEO"/>
@@ -869,8 +875,8 @@
         <image name="plus" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iLY-7z-pvk"/>
-        <segue reference="hVZ-LP-tYU"/>
+        <segue reference="A7e-E5-iSx"/>
+        <segue reference="Oz9-xO-npQ"/>
         <segue reference="Lc5-NA-1O3"/>
     </inferredMetricsTieBreakers>
 </document>
