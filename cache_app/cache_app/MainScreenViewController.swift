@@ -112,6 +112,17 @@ class MainScreenViewController: UIViewController {
     //variable to recieve email info from previous view controller
     var userEmail:String?
     
+    //initialize variables that will house user data stored in DB - not working lol
+    var userState: String = ""
+    var userCity: String = ""
+    var userTaxRate: Double = 0.0
+    var userSalary: Int = 0
+    var userStudentLoans: Int = 0
+    var userCCBill: Int = 0
+    var userRent: Int = 0
+    var userUtilities: Int = 0
+    
+    
     var taxDataEntry = PieChartDataEntry(value: 33.00)
     var rentDataEntry = PieChartDataEntry(value: 41.25)
     var loanDataEntry = PieChartDataEntry(value: 10.00)
@@ -123,16 +134,28 @@ class MainScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         dbReference = Database.database().reference()
+        
+        dbHandle = dbReference?.child("users").child(userEmail!).observe(.value, with: { (snapshot) in
+            if let value = (snapshot.value as? NSDictionary){
+                self.userState = value["state"] as? String ?? ""
+            }
+        })
+
+        
+        
+        
         
         //tax rate
         var taxRate:Double = 0.0
         dbHandle = dbReference?.child("users").child(userEmail!).child("state").observe(.value, with: { (snapshot) in
             if let userState = (snapshot.value as? String){
                 taxRate = self.stateAbbreviations[userState]!
-                print("tax rate within: \(String(describing: taxRate))")
+//                print("tax rate within: \(String(describing: taxRate))")
             }
         })
+        print(taxRate)
         
         //state
         var state:String? = ""
@@ -168,6 +191,9 @@ class MainScreenViewController: UIViewController {
             self.taxDollarLabel.text = String (Double (taxRate) * Double(income!)!)
             
         })
+        
+        
+        
         
         self.rentDollarLabel.text = "1650.00"
         self.rentPercentLabel.text = "41.25"
@@ -285,6 +311,50 @@ class MainScreenViewController: UIViewController {
         
         
     }
+    
+    
+    //////get user info from database///////
+    //////not working lol /////////////////
+
+//    func getUserInfo() {
+//        print("gettign called")
+//        dbHandle = dbReference?.child("users").child(userEmail!).child("state").observe(.value, with: { (snapshot) in
+//            print("gets inside this?")
+//            let userState = (snapshot.value as? String)
+//            var userTaxRate = self.stateAbbreviations[userState!]
+//            self.userState = userState!
+//            self.userTaxRate = userTaxRate!
+//            print("text rate within \(self.userTaxRate)")
+//        })
+//        dbHandle = dbReference?.child("users").child(userEmail!).child("city").observe(.value, with: { (snapshot) in
+//            let userCity = (snapshot.value as? String)
+//            self.userCity = userCity!
+//        })
+//        dbHandle = dbReference?.child("users").child(userEmail!).child("salary").observe(.value, with: { (snapshot) in
+//            let userSalary = (snapshot.value as? Int)
+//            self.userSalary = userSalary!
+//        })
+//        dbHandle = dbReference?.child("users").child(userEmail!).child("studentLoans").observe(.value, with: { (snapshot) in
+//            let userStudentLoans = (snapshot.value as? Int)
+//            self.userStudentLoans = userStudentLoans!
+//        })
+//        dbHandle = dbReference?.child("users").child(userEmail!).child("ccbill").observe(.value, with: { (snapshot) in
+//            let userCCBill = (snapshot.value as? Int)
+//            self.userCCBill = userCCBill!
+//        })
+//        dbHandle = dbReference?.child("users").child(userEmail!).child("rent").observe(.value, with: { (snapshot) in
+//            let userRent = (snapshot.value as? Int)
+//            self.userRent = userRent!
+//        })
+//        dbHandle = dbReference?.child("users").child(userEmail!).child("utilities").observe(.value, with: { (snapshot) in
+//            let userUtilities = (snapshot.value as? Int)
+//            self.userUtilities = userUtilities!
+////            completion?(userState, userCity, userTaxRate, userSalary, userStudentLoans, userCCBill, userRent, userUtilities!)
+//        })
+//
+//    }
+ 
+    
     
     func updateChartData(){
         
