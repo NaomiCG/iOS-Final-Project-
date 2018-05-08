@@ -111,8 +111,9 @@ extension DataApproximator {
             
         } while !queue.isEmpty
         
+        //***note from Kelly -- changed this from points.enumerated().contactMap to points.enumerated().flatMap bc I was getting an error that wouldn't allow the project to be built and this fixed it, if it messes up for anyone else just change it back and we'll fiure it out later i suppose
         // create a new array with series, only take the kept ones
-        let reducedEntries = points.enumerated().compactMap { (index: Int, point: CGPoint) -> CGPoint? in
+        let reducedEntries = points.enumerated().flatMap { (index: Int, point: CGPoint) -> CGPoint? in
             return keep[index] ? point : nil
         }
         
