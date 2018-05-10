@@ -13,11 +13,11 @@ import Charts
 class MainScreenViewController: UIViewController {
     
     @IBOutlet weak var PieChart: PieChartView!
+    
     //incomes labels
     @IBOutlet weak var grossIncomeLabel: UILabel!
-    var grossIncomeVar:String = ""
     @IBOutlet weak var netIncomeLabel: UILabel!
-    var netIncomeVar:Double = 0.0
+    
     
     //state and city labels
     @IBOutlet weak var stateLabel: UILabel!
@@ -113,20 +113,20 @@ class MainScreenViewController: UIViewController {
     var userEmail:String?
     
     //initialize variables that will house user data stored in DB - not working lol
-    var userState: String = ""
-    var userCity: String = ""
-    var userTaxRate: Double = 0.0
-    var userSalary: Int = 0
-    var userStudentLoans: Int = 0
-    var userCCBill: Int = 0
-    var userRent: Int = 0
-    var userUtilities: Int = 0
+//    var userState: String = ""
+//    var userCity: String = ""
+//    var userTaxRate: Double = 0.0
+//    var userSalary: Int = 0
+//    var userStudentLoans: Int = 0
+//    var userCCBill: Int = 0
+//    var userRent: Int = 0
+//    var userUtilities: Int = 0
     
     
-    var taxDataEntry = PieChartDataEntry(value: 33.00)
-    var rentDataEntry = PieChartDataEntry(value: 41.25)
-    var loanDataEntry = PieChartDataEntry(value: 10.00)
-    var personalDataEntry = PieChartDataEntry(value: 15.75)
+    var taxDataEntry = PieChartDataEntry()
+    var rentDataEntry = PieChartDataEntry()
+    var loanDataEntry = PieChartDataEntry()
+    var personalDataEntry = PieChartDataEntry()
     
     var numberOfDownloadsDataEntries = [PieChartDataEntry]()
 
@@ -137,25 +137,141 @@ class MainScreenViewController: UIViewController {
         
         dbReference = Database.database().reference()
         
+        //get all the data as a dictionary and handle everything inside one closure
+        
         dbHandle = dbReference?.child("users").child(userEmail!).observe(.value, with: { (snapshot) in
-            if let value = (snapshot.value as? NSDictionary){
-                self.userState = value["state"] as? String ?? ""
+            if !snapshot.exists(){
+                //handle case where data isn't found
+                return
+            } //else:
+            
+            //capture the data all at once as a dictionary
+            let userData = snapshot.value as! [String: Any]
+            
+            //capture the city
+            guard let userCity = userData["city"] as! String? else{
+                print("No city info found for the user")
+                return
             }
+            self.cityLabel.text = userCity  //set city label
+            
+            //capture the state
+            guard let userState = userData["state"] as! String? else{
+                print("No state info found for the user")
+                return
+            }
+            self.stateLabel.text = userState    //set state label
+            
+            //capture the salary (which becomes GROSS income)
+            guard let userGrossIncome = (userData["salary"] as? NSString)?.doubleValue else{
+                print("No salary info found for the user")
+                return
+            }
+            self.grossIncomeLabel.text = String(format:"%.2f", userGrossIncome)    //set income label, truncate double
+            // initially set userRemains to gross income, it will be decremented later
+            var userRemains = userGrossIncome
+           
+            //capture student loans
+            guard let userStudentLoans = (userData["studentLoans"] as? NSString)?.doubleValue else{
+                print("No student loan info found for the user")
+                return
+            }
+            
+            //capture credit card bill
+            guard let userCCBill = (userData["ccbill"] as? NSString)?.doubleValue else{
+                print("No credit card info found for the user")
+                return
+            }
+            
+            //capture rent
+            guard let userRent = (userData["rent"] as? NSString)?.doubleValue else{
+                print("No rent info found for the user")
+                return
+            }
+            
+            //capture utilities
+            guard let userUtilites = (userData["utilities"] as? NSString)?.doubleValue else{
+                print("No utility info found for the user")
+                return
+            }
+            
+            //get tax rate based on state
+            let userTaxRate = self.stateAbbreviations[userState]
+            let userTaxValue = userGrossIncome * userTaxRate!
+            
+            //calculate net income (gross income - taxes)
+            let userNetIncome = userGrossIncome - userTaxValue
+            self.netIncomeLabel.text = String(format:"%.2f",userNetIncome)    //set net income label
+            
+            
+            self.taxPercentLabel.text = String (userTaxRate! * 100)     //set tax rate label
+            self.taxDollarLabel.text = String (format: "%.2f", userTaxRate! * userGrossIncome)     //set tax amount label
+            
+            self.taxDataEntry.value = userTaxRate! * 100    //set tax value in the chart
+            self.taxDataEntry.label = "Taxes"
+            
+            //calculate expenses aka rent + utilities
+            let userExpenses = userRent + userUtilites
+            
+            self.rentPercentLabel.text = String(format: "%.2f", userExpenses/userGrossIncome * 100)     //set expenses percent label
+            self.rentDollarLabel.text = String(format: "%.2f", userExpenses)    //set expenses amount label
+            
+            self.rentDataEntry.value = userExpenses/userGrossIncome * 100   //set expenses value in the chart
+            self.rentDataEntry.label = "Rent"
+            
+            
+            //calculate total loans aka student loans + credit card bill
+            let userLoans = userStudentLoans + userCCBill
+            
+            self.loanPercentLabel.text = String(format: "%.2f", userLoans/userGrossIncome * 100)    //set loans percent label
+            self.loanDollarLabels.text = String(format: "%.2f", userLoans)      //set loans amount label
+            
+            self.loanDataEntry.value = userLoans/userGrossIncome * 100      //set loans value in the chart
+            self.loanDataEntry.label = "Loans"
+            
+            //calculate remaining money
+            userRemains -= (userTaxValue + userExpenses + userLoans)
+            
+            self.personalPercentLabel.text = String(format: "%.2f", userNetIncome/userGrossIncome * 100)    //set remaining money percent label
+            self.personalDollarLabel.text = String(format: "%.2f", userRemains)     //set remaining money amount label
+            
+            self.personalDataEntry.value = userRemains/userGrossIncome * 100  //set remaining money value in the chart
+            self.personalDataEntry.label = "Remains"
+            
+            self.numberOfDownloadsDataEntries = [self.taxDataEntry, self.rentDataEntry, self.loanDataEntry, self.personalDataEntry]
+            
+            self.updateChartData()
+            
         })
+        
+
+        /*
 
         
+        //gross and net income
+        var income:String? = ""
+        var grossIncomeVar:Int = 0
+        var netIncomeVar:Int = 0
         
-        
-        
-        //tax rate
-        var taxRate:Double = 0.0
-        dbHandle = dbReference?.child("users").child(userEmail!).child("state").observe(.value, with: { (snapshot) in
-            if let userState = (snapshot.value as? String){
-                taxRate = self.stateAbbreviations[userState]!
-//                print("tax rate within: \(String(describing: taxRate))")
-            }
+        dbHandle = dbReference?.child("users").child(userEmail!).child("salary").observe(.value, with: { (snapshot) in
+            income = snapshot.value as? String
+            
+            //gross income
+            self.grossIncomeLabel.text = income
+            grossIncomeVar = Int(income!)!
+            print("inner self.grossIncomeVar: \(grossIncomeVar)")
+            
+            
+            //net income
+            let netIncome = Double(income!)! - (Double (taxRate) * Double(income!)!)
+            self.netIncomeLabel.text = String (netIncome)
+            
+            //tax
+            self.taxPercentLabel.text = String ((Double (taxRate) * 100))
+            self.taxDollarLabel.text = String (Double (taxRate) * Double(income!)!)
+            
         })
-        print(taxRate)
+        
         
         //state
         var state:String? = ""
@@ -173,54 +289,7 @@ class MainScreenViewController: UIViewController {
             self.cityVar = city!
         })
         
-        //gross and net income
-        var income:String? = ""
-        dbHandle = dbReference?.child("users").child(userEmail!).child("salary").observe(.value, with: { (snapshot) in
-            income = snapshot.value as? String
-            
-            //gross income
-            self.grossIncomeLabel.text = income
-            self.grossIncomeVar = income!
-            
-            //net income
-            let netIncome = Double(income!)! - (Double (taxRate) * Double(income!)!)
-            self.netIncomeLabel.text = String (netIncome)
-            
-            //tax
-            self.taxPercentLabel.text = String ((Double (taxRate) * 100))
-            self.taxDollarLabel.text = String (Double (taxRate) * Double(income!)!)
-            
-        })
-        
-        
-        
-        
-        self.rentDollarLabel.text = "1650.00"
-        self.rentPercentLabel.text = "41.25"
-        self.loanDollarLabels.text = "400.00"
-        self.loanPercentLabel.text = "10.00"
-        self.personalDollarLabel.text = "630.00"
-        self.personalPercentLabel.text = "15.75"
-        
-//        var taxDataEntry = PieChartDataEntry(value: 33.00)
-//        var rentDataEntry = PieChartDataEntry(value: 41.25)
-//        var loanDataEntry = PieChartDataEntry(value: 10.00)
-//        var personalDataEntry = PieChartDataEntry(value: 15.75)
-        
-        
-        taxDataEntry.value = 33.00
-        taxDataEntry.label = "Taxes"
-        rentDataEntry.value = 41.25
-        rentDataEntry.label = "Rent"
-        loanDataEntry.value = 10.00
-        loanDataEntry.label = "Loans"
-        personalDataEntry.value = 15.75
-        personalDataEntry.label = "Remains"
-        
-        numberOfDownloadsDataEntries = [taxDataEntry, rentDataEntry, loanDataEntry, personalDataEntry]
-        
-       updateChartData()
-        
+
         /*
          
          //rent
@@ -307,53 +376,10 @@ class MainScreenViewController: UIViewController {
          })
          */
         
-        
+        */
         
         
     }
-    
-    
-    //////get user info from database///////
-    //////not working lol /////////////////
-
-//    func getUserInfo() {
-//        print("gettign called")
-//        dbHandle = dbReference?.child("users").child(userEmail!).child("state").observe(.value, with: { (snapshot) in
-//            print("gets inside this?")
-//            let userState = (snapshot.value as? String)
-//            var userTaxRate = self.stateAbbreviations[userState!]
-//            self.userState = userState!
-//            self.userTaxRate = userTaxRate!
-//            print("text rate within \(self.userTaxRate)")
-//        })
-//        dbHandle = dbReference?.child("users").child(userEmail!).child("city").observe(.value, with: { (snapshot) in
-//            let userCity = (snapshot.value as? String)
-//            self.userCity = userCity!
-//        })
-//        dbHandle = dbReference?.child("users").child(userEmail!).child("salary").observe(.value, with: { (snapshot) in
-//            let userSalary = (snapshot.value as? Int)
-//            self.userSalary = userSalary!
-//        })
-//        dbHandle = dbReference?.child("users").child(userEmail!).child("studentLoans").observe(.value, with: { (snapshot) in
-//            let userStudentLoans = (snapshot.value as? Int)
-//            self.userStudentLoans = userStudentLoans!
-//        })
-//        dbHandle = dbReference?.child("users").child(userEmail!).child("ccbill").observe(.value, with: { (snapshot) in
-//            let userCCBill = (snapshot.value as? Int)
-//            self.userCCBill = userCCBill!
-//        })
-//        dbHandle = dbReference?.child("users").child(userEmail!).child("rent").observe(.value, with: { (snapshot) in
-//            let userRent = (snapshot.value as? Int)
-//            self.userRent = userRent!
-//        })
-//        dbHandle = dbReference?.child("users").child(userEmail!).child("utilities").observe(.value, with: { (snapshot) in
-//            let userUtilities = (snapshot.value as? Int)
-//            self.userUtilities = userUtilities!
-////            completion?(userState, userCity, userTaxRate, userSalary, userStudentLoans, userCCBill, userRent, userUtilities!)
-//        })
-//
-//    }
- 
     
     
     func updateChartData(){

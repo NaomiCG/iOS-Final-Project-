@@ -78,6 +78,7 @@ class RegistrationInfoViewController: UIViewController, UIPickerViewDelegate, UI
             dbHandle = dbReference?.child("users").child(userEmail!).child("lastName").observe(.value, with: { (snapshot) in
                 let userLastName:String? = snapshot.value as? String
                 let userFullName:String = userFirstName! + " " + userLastName!
+//                print("inside second closure: \(userFirstName)")
                 self.name.text = userFullName
             })
 

@@ -32,7 +32,7 @@ class LogInViewController: UIViewController {
                 if user != nil
                 {
                     //log in successful
-                    print("LOGIN SUCCESSFUL")
+//                    print("LOGIN SUCCESSFUL")
                     self.performSegue(withIdentifier: "LogInSegue", sender: self)
                 }
                 else
@@ -40,12 +40,12 @@ class LogInViewController: UIViewController {
                     if let myError = error?.localizedDescription
                     {
                         //we have a description of the error
-                        print(myError)
+//                        print(myError)
                         self.warning.text = myError
                     }
                     else
                     {
-                        print("ERROR")
+//                        print("ERROR")
                         self.warning.text = "Error. Please re-enter values."
                     }
                 }
