@@ -392,6 +392,16 @@ class MainScreenViewController: UIViewController {
         chartDataSet.colors = colors as! [NSUIColor]
         PieChart.data = chartData
     }
+    
+    @IBAction func editButtonPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "editInfoSegue", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? RegistrationInfoViewController{
+            destination.userEmail = userEmail
+            destination.cameFromMainScreen = true
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

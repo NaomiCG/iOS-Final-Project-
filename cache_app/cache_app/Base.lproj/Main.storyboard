@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -179,7 +180,7 @@
             </objects>
             <point key="canvasLocation" x="-2686" y="43"/>
         </scene>
-        <!--Main Screen View Controller-->
+        <!--Your Finances-->
         <scene sceneID="DtU-gb-cS9">
             <objects>
                 <viewController id="hOd-od-WU8" customClass="MainScreenViewController" customModule="cache_app" customModuleProvider="target" sceneMemberID="viewController">
@@ -209,14 +210,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8K-zW-d7o">
-                                <rect key="frame" x="261" y="142" width="75" height="18"/>
+                                <rect key="frame" x="261" y="142" width="98" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEw-vu-j4a">
-                                <rect key="frame" x="261" y="168" width="61" height="18"/>
+                                <rect key="frame" x="261" y="168" width="98" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -269,7 +270,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Personal Expenses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQK-gB-Rlq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remaining Money" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQK-gB-Rlq">
                                 <rect key="frame" x="39" y="720" width="144" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -415,6 +416,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="tRt-R1-0kx"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Your Finances" id="5Xe-Ow-shd">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="JCA-uX-PWO">
+                            <color key="tintColor" name="Tax"/>
+                            <connections>
+                                <action selector="editButtonPressed:" destination="hOd-od-WU8" id="dhI-f9-nCR"/>
+                                <segue destination="SJG-GH-Kej" kind="show" identifier="editInfoSegue" id="Rdj-ax-Hc1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="PieChart" destination="Txr-8T-fCY" id="6uG-fm-s6T"/>
                         <outlet property="cityLabel" destination="8bq-fL-PHW" id="XYR-H5-3AY"/>
@@ -433,7 +443,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G4A-8z-YOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-730" y="259"/>
+            <point key="canvasLocation" x="-730.39999999999998" y="258.62068965517244"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -570,7 +580,6 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="w0b-r4-Fro"/>
                     <connections>
                         <outlet property="birthday" destination="NJ8-Dx-QCa" id="yW8-tu-QmN"/>
                         <outlet property="email" destination="1N6-77-NgW" id="2Mi-Mk-odw"/>
@@ -878,8 +887,12 @@
         <image name="minus" width="48" height="48"/>
         <image name="pinkline" width="1800" height="800"/>
         <image name="question" width="198" height="299"/>
+        <namedColor name="Tax">
+            <color red="1" green="0.22400000691413879" blue="0.76499998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="DO0-HO-CK2"/>
         <segue reference="iLY-7z-pvk"/>
     </inferredMetricsTieBreakers>
 </document>

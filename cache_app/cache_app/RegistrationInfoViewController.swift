@@ -36,11 +36,11 @@ class RegistrationInfoViewController: UIViewController, UIPickerViewDelegate, UI
     @IBOutlet weak var utilitiesLabel: UILabel!
     @IBOutlet weak var utilitiesValue: UITextField!
     
-    @IBOutlet weak var newLoanButton: UIButton!
+
     @IBOutlet weak var removeStudentLoanButton: UIButton!
     @IBOutlet weak var removeCCBillButton: UIButton!
     
-    @IBOutlet weak var newLivingExpenseButton: UIButton!
+
     @IBOutlet weak var removeRentButton: UIButton!
     @IBOutlet weak var removeUtilitiesButton: UIButton!
     
@@ -51,10 +51,8 @@ class RegistrationInfoViewController: UIViewController, UIPickerViewDelegate, UI
     //variable to recieve email info from previous view controller
     var userEmail:String?
     
-    //keep track of how many different fields the user has filled out/is relevant to the user
-    //necessary for math later when we are adding new fields
-    var loansCount:Int = 2
-    var expensesCount:Int = 2
+    //boolean to check if what view controller the user is coming from
+    var cameFromMainScreen:Bool = false
     
     var dbReference : DatabaseReference?
     var dbHandle : DatabaseHandle?
@@ -66,7 +64,6 @@ class RegistrationInfoViewController: UIViewController, UIPickerViewDelegate, UI
         
         //setting up user info that we already have
         //aka displaying their name, email, and birthday
-        
         if userEmail != nil{
             email.text = userEmail
             
@@ -78,7 +75,6 @@ class RegistrationInfoViewController: UIViewController, UIPickerViewDelegate, UI
             dbHandle = dbReference?.child("users").child(userEmail!).child("lastName").observe(.value, with: { (snapshot) in
                 let userLastName:String? = snapshot.value as? String
                 let userFullName:String = userFirstName! + " " + userLastName!
-//                print("inside second closure: \(userFirstName)")
                 self.name.text = userFullName
             })
 
@@ -88,6 +84,70 @@ class RegistrationInfoViewController: UIViewController, UIPickerViewDelegate, UI
                 self.birthday.text = userBirthday
             })
            
+        }
+        
+        if (cameFromMainScreen){
+            dbHandle = dbReference?.child("users").child(userEmail!).observe(.value, with: { (snapshot) in
+                if !snapshot.exists(){
+                    //handle case where data isn't found
+                    return
+                } //else:
+                
+                //capture the data all at once as a dictionary
+                let userData = snapshot.value as! [String: Any]
+                
+                //capture the city
+                guard let userCity = userData["city"] as! String? else{
+                    print("No city info found for the user")
+                    return
+                }
+                self.location.text = userCity  //set city label
+                
+                //capture the state
+                guard let userState = userData["state"] as! String? else{
+                    print("No state info found for the user")
+                    return
+                }
+                self.stateTextBox.text = userState    //set state label
+                
+                //capture the salary (which becomes GROSS income)
+                guard let userGrossIncome = (userData["salary"] as? NSString)?.doubleValue else{
+                    print("No salary info found for the user")
+                    return
+                }
+                self.salary.text = String(format:"%.2f", userGrossIncome)    //set income label, truncate double
+                self.salarySlider.setValue(Float(userGrossIncome), animated: false)
+                
+                //capture student loans
+                guard let userStudentLoans = (userData["studentLoans"] as? NSString)?.doubleValue else{
+                    print("No student loan info found for the user")
+                    return
+                }
+                self.loanValue.text = String(format:"%.2f", userStudentLoans)
+                
+                //capture credit card bill
+                guard let userCCBill = (userData["ccbill"] as? NSString)?.doubleValue else{
+                    print("No credit card info found for the user")
+                    return
+                }
+                self.ccbillValue.text = String(format:"%.2f", userCCBill)
+                
+                //capture rent
+                guard let userRent = (userData["rent"] as? NSString)?.doubleValue else{
+                    print("No rent info found for the user")
+                    return
+                }
+                self.rentValue.text = String(format:"%.2f", userRent)
+                
+                //capture utilities
+                guard let userUtilites = (userData["utilities"] as? NSString)?.doubleValue else{
+                    print("No utility info found for the user")
+                    return
+                }
+                self.utilitiesValue.text = String(format:"%.2f", userUtilites)
+                
+            })
+            
         }
     }
 
@@ -187,28 +247,28 @@ class RegistrationInfoViewController: UIViewController, UIPickerViewDelegate, UI
         ccbillLabel.isHidden = true
         ccbillValue.isHidden = true
         removeCCBillButton.isHidden = true
-        loansCount -= 1
+//        loansCount -= 1
     }
     
     @IBAction func removeStudentLoan(_ sender: Any) {
         loanLabel.isHidden = true
         loanValue.isHidden = true
         removeStudentLoanButton.isHidden = true
-        loansCount -= 1
+//        loansCount -= 1
     }
     
     @IBAction func removeRent(_ sender: Any) {
         rentLabel.isHidden = true
         rentValue.isHidden = true
         removeRentButton.isHidden = true
-        expensesCount -= 1
+//        expensesCount -= 1
     }
     
     @IBAction func removeUtilities(_ sender: Any) {
         utilitiesLabel.isHidden = true
         utilitiesValue.isHidden = true
         removeUtilitiesButton.isHidden = true
-        expensesCount -= 1
+//        expensesCount -= 1
     }
     @IBAction func loanButtonClicked(_ sender: Any) {
         let alert = UIAlertController(title: "What's a loan?", message: "the lending of money from one individual, organization or entity to another individual, organization or entity.", preferredStyle: .alert)
