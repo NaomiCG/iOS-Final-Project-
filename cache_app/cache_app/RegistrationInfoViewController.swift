@@ -110,6 +110,13 @@ class RegistrationInfoViewController: UIViewController, UIPickerViewDelegate, UI
                 }
                 self.stateTextBox.text = userState    //set state label
                 
+                //capture the employer
+                guard let userEmployer = userData["employer"] as! String? else{
+                    print("No employer info found for the user")
+                    return
+                }
+                self.companyName.text = userEmployer    //set state label
+                
                 //capture the salary (which becomes GROSS income)
                 guard let userGrossIncome = (userData["salary"] as? NSString)?.doubleValue else{
                     print("No salary info found for the user")
