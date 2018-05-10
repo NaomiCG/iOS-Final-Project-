@@ -767,7 +767,6 @@
                                 </state>
                                 <connections>
                                     <action selector="saveButtonPressed:" destination="SJG-GH-Kej" eventType="touchUpInside" id="6NB-Zp-azl"/>
-                                    <segue destination="hOd-od-WU8" kind="show" identifier="InfoToMainScreen" id="iLY-7z-pvk"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100.00" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gMm-tH-6YK">
@@ -855,6 +854,7 @@
                         <outlet property="stateTextBox" destination="k8c-KU-zBC" id="ddZ-nU-cfy"/>
                         <outlet property="utilitiesLabel" destination="YTL-U9-bgd" id="R3N-VC-Sff"/>
                         <outlet property="utilitiesValue" destination="gMm-tH-6YK" id="GNn-qA-qUd"/>
+                        <segue destination="hOd-od-WU8" kind="show" identifier="InfoToMainScreen" id="iVU-J7-0R1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sh0-HK-fNK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -892,7 +892,7 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DO0-HO-CK2"/>
-        <segue reference="iLY-7z-pvk"/>
+        <segue reference="Rdj-ax-Hc1"/>
+        <segue reference="iVU-J7-0R1"/>
     </inferredMetricsTieBreakers>
 </document>

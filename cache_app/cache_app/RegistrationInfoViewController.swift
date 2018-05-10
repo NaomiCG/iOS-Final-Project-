@@ -115,15 +115,15 @@ class RegistrationInfoViewController: UIViewController, UIPickerViewDelegate, UI
                     print("No employer info found for the user")
                     return
                 }
-                self.companyName.text = userEmployer    //set state label
+                self.companyName.text = userEmployer    //set employer label
                 
-                //capture the salary (which becomes GROSS income)
+                //capture the salary
                 guard let userGrossIncome = (userData["salary"] as? NSString)?.doubleValue else{
                     print("No salary info found for the user")
                     return
                 }
                 self.salary.text = String(format:"%.2f", userGrossIncome)    //set income label, truncate double
-                self.salarySlider.setValue(Float(userGrossIncome), animated: false)
+                self.salarySlider.setValue(Float(userGrossIncome), animated: false) //set the slider properly
                 
                 //capture student loans
                 guard let userStudentLoans = (userData["studentLoans"] as? NSString)?.doubleValue else{
