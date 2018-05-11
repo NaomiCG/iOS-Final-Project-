@@ -22,19 +22,18 @@ class ViewControllerTax: UIViewController {
     @IBOutlet weak var state: UILabel!
     @IBOutlet weak var city: UILabel!
     
-    //rent labels
-    @IBOutlet weak var rentPercentLabel: UILabel!
-    var rentPercentVar:Double = 0.0
-    @IBOutlet weak var rentDollarLabel: UILabel!
-    var rentDollarVar:Double = 0.0
+    //taxes labels
+
+    @IBOutlet weak var fedPercent: UILabel!
+    @IBOutlet weak var fedDollar: UILabel!
+  
+    @IBOutlet weak var statePercent: UILabel!
+    @IBOutlet weak var stateDollar: UILabel!
+
+    @IBOutlet weak var cityPercent: UILabel!
+
+    @IBOutlet weak var cityDollar: UILabel!
     
-
-    @IBOutlet weak var utilitiesPercent: UILabel!
-    var utilitiesPercentVar: Double = 0.0
-    @IBOutlet weak var utilitiesDollar: UILabel!
-    var utilitiesDollarVar:Double = 0.0
-
-
     
     
     //db references
@@ -154,7 +153,12 @@ class ViewControllerTax: UIViewController {
             let userNetIncome = userGrossIncome - userTaxValue
             self.netincome.text = String(format:"%.2f",userNetIncome)    //set net income label
             
-        
+            
+            self.taxPercentLabel.text = String (userTaxRate! * 100)     //set tax rate label
+            self.taxDollarLabel.text = String (format: "%.2f", userTaxRate! * userGrossIncome)     //set tax amount label
+            
+            self.taxDataEntry.value = userTaxRate! * 100    //set tax value in the chart
+            self.taxDataEntry.label = "Taxes"
             
         //end of dbhandle
             
