@@ -154,11 +154,6 @@ class ViewControllerTax: UIViewController {
             self.netincome.text = String(format:"%.2f",userNetIncome)    //set net income label
             
             
-            self.taxPercentLabel.text = String (userTaxRate! * 100)     //set tax rate label
-            self.taxDollarLabel.text = String (format: "%.2f", userTaxRate! * userGrossIncome)     //set tax amount label
-            
-            self.taxDataEntry.value = userTaxRate! * 100    //set tax value in the chart
-            self.taxDataEntry.label = "Taxes"
             
         //end of dbhandle
             
