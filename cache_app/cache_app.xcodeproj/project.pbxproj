@@ -16,6 +16,7 @@
 		49D1BBCE7ABF163974F13848 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49D1B9D0C5314E9A49347EFB /* Assets.xcassets */; };
 		49D1BE71F31D2E5326800D82 /* cache_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D1BF85D4E3E82B49F4E0C5 /* cache_appTests.swift */; };
 		66EAB2F3209F846500501308 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EAB2F2209F846500501308 /* MainScreenViewController.swift */; };
+		79E9BB6C20A60CA5006E477B /* ViewControllerTax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E9BB6B20A60CA5006E477B /* ViewControllerTax.swift */; };
 		89143897954DD733B0649605 /* Pods_cache_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01916DC24B4BFAD54D9722EA /* Pods_cache_app.framework */; };
 		A98B4C78209A84D90021917F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A98B4C77209A84D90021917F /* GoogleService-Info.plist */; };
 		CFF2F15AF2D877F66F1AB1F6 /* Pods_cache_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D66582FFE10598CC7FBC5B22 /* Pods_cache_appTests.framework */; };
@@ -95,6 +96,7 @@
 		49D1BF85D4E3E82B49F4E0C5 /* cache_appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cache_appTests.swift; sourceTree = "<group>"; };
 		66EAB2F2209F846500501308 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		72786AF6808C3B251BAE812B /* Pods_cache_appUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cache_appUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79E9BB6B20A60CA5006E477B /* ViewControllerTax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTax.swift; sourceTree = "<group>"; };
 		842E295F2180C2E60BEC9891 /* Pods-cache_appUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cache_appUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cache_appUITests/Pods-cache_appUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A98B4C77209A84D90021917F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BB896A3469F2ED3A02538BAB /* Pods-cache_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cache_app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cache_app/Pods-cache_app.debug.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				49D1BADFD7F0F158457ABA59 /* LaunchScreen.storyboard */,
 				49D1B0D4F8B3D1E796F772E6 /* AppDelegate.swift */,
 				49D1B293B257B75817D0E5CA /* Main.storyboard */,
+				79E9BB6B20A60CA5006E477B /* ViewControllerTax.swift */,
 				66EAB2F2209F846500501308 /* MainScreenViewController.swift */,
 				F96A7B67209A10F90043D34C /* RegistrationInfoViewController.swift */,
 				F96A7B6320965CA00043D34C /* LogInViewController.swift */,
@@ -474,6 +477,7 @@
 			files = (
 				66EAB2F3209F846500501308 /* MainScreenViewController.swift in Sources */,
 				49D1B4DC2A2F65B706EC88EC /* AppDelegate.swift in Sources */,
+				79E9BB6C20A60CA5006E477B /* ViewControllerTax.swift in Sources */,
 				F96A7B68209A10F90043D34C /* RegistrationInfoViewController.swift in Sources */,
 				49D1B315EA2A1DF61810F636 /* ViewController.swift in Sources */,
 				F96A7B6420965CA00043D34C /* LogInViewController.swift in Sources */,

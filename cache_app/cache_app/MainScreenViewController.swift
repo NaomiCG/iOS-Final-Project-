@@ -133,8 +133,7 @@ class MainScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        //pie chart description
         dbReference = Database.database().reference()
         
         //get all the data as a dictionary and handle everything inside one closure
@@ -209,6 +208,7 @@ class MainScreenViewController: UIViewController {
             
             self.taxDataEntry.value = userTaxRate! * 100    //set tax value in the chart
             self.taxDataEntry.label = "Taxes"
+            self.PieChart.description;"Finances"
             
             //calculate expenses aka rent + utilities
             let userExpenses = userRent + userUtilites
@@ -386,7 +386,7 @@ class MainScreenViewController: UIViewController {
         
         let chartDataSet = PieChartDataSet(values: numberOfDownloadsDataEntries, label: nil)
         let chartData = PieChartData(dataSet: chartDataSet)
-        
+
         let colors = [UIColor(named: "Rent"), UIColor(named: "Tax"), UIColor(named: "Loan"), UIColor(named: "Color")]
 
         chartDataSet.colors = colors as! [NSUIColor]
@@ -397,9 +397,9 @@ class MainScreenViewController: UIViewController {
         self.performSegue(withIdentifier: "editInfoSegue", sender: self)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? RegistrationInfoViewController{
+        if let destination = segue.destination as? ViewControllerTax{
             destination.userEmail = userEmail
-            destination.cameFromMainScreen = true
+
         }
     }
 
