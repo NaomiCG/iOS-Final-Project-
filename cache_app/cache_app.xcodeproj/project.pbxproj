@@ -19,9 +19,11 @@
 		79E9BB6C20A60CA5006E477B /* ViewControllerTax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E9BB6B20A60CA5006E477B /* ViewControllerTax.swift */; };
 		89143897954DD733B0649605 /* Pods_cache_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01916DC24B4BFAD54D9722EA /* Pods_cache_app.framework */; };
 		A98B4C78209A84D90021917F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A98B4C77209A84D90021917F /* GoogleService-Info.plist */; };
+		A9A369F520A6499900C4215C /* Charts.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = A9A369F420A6499800C4215C /* Charts.xcworkspace */; };
 		CFF2F15AF2D877F66F1AB1F6 /* Pods_cache_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D66582FFE10598CC7FBC5B22 /* Pods_cache_appTests.framework */; };
 		F96A7B6420965CA00043D34C /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96A7B6320965CA00043D34C /* LogInViewController.swift */; };
 		F96A7B68209A10F90043D34C /* RegistrationInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96A7B67209A10F90043D34C /* RegistrationInfoViewController.swift */; };
+		FC053E9F20A64E8A00ECC2B6 /* loanviewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC053E9E20A64E8A00ECC2B6 /* loanviewcontroller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,20 +40,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 49D1BE3E7A73754F2364B9E3;
 			remoteInfo = cache_app;
-		};
-		FC932BAA20A081E4001E7F82 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FC932BA520A081E3001E7F82 /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 65AD9E95D9ED4DC0BD73A743;
-			remoteInfo = Charts;
-		};
-		FC932BAC20A081E4001E7F82 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FC932BA520A081E3001E7F82 /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1CBBC58C6CE1EBEE9852CE41;
-			remoteInfo = ChartsTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -99,6 +87,7 @@
 		79E9BB6B20A60CA5006E477B /* ViewControllerTax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTax.swift; sourceTree = "<group>"; };
 		842E295F2180C2E60BEC9891 /* Pods-cache_appUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cache_appUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cache_appUITests/Pods-cache_appUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A98B4C77209A84D90021917F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A9A369F420A6499800C4215C /* Charts.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = Charts.xcworkspace; sourceTree = "<group>"; };
 		BB896A3469F2ED3A02538BAB /* Pods-cache_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cache_app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cache_app/Pods-cache_app.debug.xcconfig"; sourceTree = "<group>"; };
 		D66582FFE10598CC7FBC5B22 /* Pods_cache_appTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cache_appTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7556C68868EA566CB7A204E /* Pods-cache_appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cache_appTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-cache_appTests/Pods-cache_appTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -106,7 +95,7 @@
 		EFCEDF31678516E2CEF697AA /* Pods-cache_appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cache_appTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cache_appTests/Pods-cache_appTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F96A7B6320965CA00043D34C /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		F96A7B67209A10F90043D34C /* RegistrationInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInfoViewController.swift; sourceTree = "<group>"; };
-		FC932BA520A081E3001E7F82 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = ../../Charts/Charts.xcodeproj; sourceTree = "<group>"; };
+		FC053E9E20A64E8A00ECC2B6 /* loanviewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = loanviewcontroller.swift; path = "/Users/martinbrekke/Desktop/iOS-Final-Project-/cache_app/cache_app/loanviewcontroller.swift"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +133,7 @@
 				A98B4C77209A84D90021917F /* GoogleService-Info.plist */,
 				49D1B9D0C5314E9A49347EFB /* Assets.xcassets */,
 				49D1BADFD7F0F158457ABA59 /* LaunchScreen.storyboard */,
+				FC053E9E20A64E8A00ECC2B6 /* loanviewcontroller.swift */,
 				49D1B0D4F8B3D1E796F772E6 /* AppDelegate.swift */,
 				49D1B293B257B75817D0E5CA /* Main.storyboard */,
 				79E9BB6B20A60CA5006E477B /* ViewControllerTax.swift */,
@@ -158,7 +148,7 @@
 		49D1B2398140303A67AE36D8 = {
 			isa = PBXGroup;
 			children = (
-				FC932BA520A081E3001E7F82 /* Charts.xcodeproj */,
+				A9A369F420A6499800C4215C /* Charts.xcworkspace */,
 				49D1BD43D204A21160C7C2DC /* Products */,
 				49D1B2185F441AE6151E1124 /* cache_app */,
 				49D1B88017A54AB347CACFE9 /* cache_appTests */,
@@ -217,15 +207,6 @@
 				E6593FE6E5760168DD840A55 /* Pods-cache_appUITests.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		FC932BA620A081E3001E7F82 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				FC932BAB20A081E4001E7F82 /* Charts.framework */,
-				FC932BAD20A081E4001E7F82 /* ChartsTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,12 +292,6 @@
 			mainGroup = 49D1B2398140303A67AE36D8;
 			productRefGroup = 49D1BD43D204A21160C7C2DC /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = FC932BA620A081E3001E7F82 /* Products */;
-					ProjectRef = FC932BA520A081E3001E7F82 /* Charts.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				49D1BE3E7A73754F2364B9E3 /* cache_app */,
@@ -325,23 +300,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		FC932BAB20A081E4001E7F82 /* Charts.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Charts.framework;
-			remoteRef = FC932BAA20A081E4001E7F82 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		FC932BAD20A081E4001E7F82 /* ChartsTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ChartsTests.xctest;
-			remoteRef = FC932BAC20A081E4001E7F82 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		49D1B39D1B87CDE5419AE820 /* Resources */ = {
@@ -364,6 +322,7 @@
 			files = (
 				49D1BBCE7ABF163974F13848 /* Assets.xcassets in Resources */,
 				49D1B98A3E0B5577D341CE14 /* LaunchScreen.storyboard in Resources */,
+				A9A369F520A6499900C4215C /* Charts.xcworkspace in Resources */,
 				A98B4C78209A84D90021917F /* GoogleService-Info.plist in Resources */,
 				49D1B3DAC764656ADB86CABC /* Main.storyboard in Resources */,
 			);
@@ -479,6 +438,7 @@
 				49D1B4DC2A2F65B706EC88EC /* AppDelegate.swift in Sources */,
 				79E9BB6C20A60CA5006E477B /* ViewControllerTax.swift in Sources */,
 				F96A7B68209A10F90043D34C /* RegistrationInfoViewController.swift in Sources */,
+				FC053E9F20A64E8A00ECC2B6 /* loanviewcontroller.swift in Sources */,
 				49D1B315EA2A1DF61810F636 /* ViewController.swift in Sources */,
 				F96A7B6420965CA00043D34C /* LogInViewController.swift in Sources */,
 			);

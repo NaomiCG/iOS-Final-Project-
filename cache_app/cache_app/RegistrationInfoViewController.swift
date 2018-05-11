@@ -65,7 +65,13 @@ class RegistrationInfoViewController: UIViewController, UIPickerViewDelegate, UI
         //setting up user info that we already have
         //aka displaying their name, email, and birthday
         if userEmail != nil{
-            email.text = userEmail
+            
+            
+            //replace comma with period in email
+            let newEmail = userEmail?.replacingOccurrences(of: ",", with: ".")
+            
+            //display email (now without comma)
+            email.text = newEmail
             
             var userFirstName:String? = ""
             dbHandle = dbReference?.child("users").child(userEmail!).child("firstName").observe(.value, with: { (snapshot) in

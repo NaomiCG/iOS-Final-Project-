@@ -409,7 +409,16 @@ class MainScreenViewController: UIViewController {
                         destination.cameFromMainScreen = true
                     }
     }
-
+    
+    @IBAction func questionMarkPressed(_ sender: Any) {
+        let alert = UIAlertController(title: "What's the difference between gross and net income?", message: "Gross income is your total income, and net income is what's left after taxes.", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+        }))
+        
+        self.present(alert, animated:true, completion:nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
