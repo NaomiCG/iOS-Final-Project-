@@ -405,14 +405,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oWI-Om-Dr5">
-                                <rect key="frame" x="307" y="573" width="29" height="34"/>
+                                <rect key="frame" x="317" y="573" width="29" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="&gt;">
                                     <attributedString key="attributedTitle">
                                         <fragment content="&gt;">
                                             <attributes>
                                                 <color key="NSColor" red="0.84812283519999998" green="0.36490654950000001" blue="0.62358665469999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <font key="NSFont" size="18" name=".SFNSDisplay"/>
+                                                <font key="NSFont" size="36" name=".SFNSDisplay"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>

@@ -22,18 +22,19 @@ class ViewControllerTax: UIViewController {
     @IBOutlet weak var state: UILabel!
     @IBOutlet weak var city: UILabel!
     
-    //taxes labels
-
-    @IBOutlet weak var fedPercent: UILabel!
-    @IBOutlet weak var fedDollar: UILabel!
-  
-    @IBOutlet weak var statePercent: UILabel!
-    @IBOutlet weak var stateDollar: UILabel!
-
-    @IBOutlet weak var cityPercent: UILabel!
-
-    @IBOutlet weak var cityDollar: UILabel!
+    //rent labels
+    @IBOutlet weak var rentPercentLabel: UILabel!
+    var rentPercentVar:Double = 0.0
+    @IBOutlet weak var rentDollarLabel: UILabel!
+    var rentDollarVar:Double = 0.0
     
+
+    @IBOutlet weak var utilitiesPercent: UILabel!
+    var utilitiesPercentVar: Double = 0.0
+    @IBOutlet weak var utilitiesDollar: UILabel!
+    var utilitiesDollarVar:Double = 0.0
+
+
     
     
     //db references
