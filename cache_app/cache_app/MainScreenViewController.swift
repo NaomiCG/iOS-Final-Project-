@@ -396,11 +396,18 @@ class MainScreenViewController: UIViewController {
     @IBAction func editButtonPressed(_ sender: Any) {
         self.performSegue(withIdentifier: "editInfoSegue", sender: self)
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+       
         if let destination = segue.destination as? ViewControllerTax{
             destination.userEmail = userEmail
-
         }
+        
+        if let destination = segue.destination as? RegistrationInfoViewController{
+                        destination.userEmail = userEmail
+                        destination.cameFromMainScreen = true
+                    }
     }
 
     override func didReceiveMemoryWarning() {
