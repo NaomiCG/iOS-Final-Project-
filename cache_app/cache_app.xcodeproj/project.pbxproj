@@ -23,7 +23,6 @@
 		CFF2F15AF2D877F66F1AB1F6 /* Pods_cache_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D66582FFE10598CC7FBC5B22 /* Pods_cache_appTests.framework */; };
 		F96A7B6420965CA00043D34C /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96A7B6320965CA00043D34C /* LogInViewController.swift */; };
 		F96A7B68209A10F90043D34C /* RegistrationInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96A7B67209A10F90043D34C /* RegistrationInfoViewController.swift */; };
-		FC053E9F20A64E8A00ECC2B6 /* loanviewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC053E9E20A64E8A00ECC2B6 /* loanviewcontroller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,7 +94,6 @@
 		EFCEDF31678516E2CEF697AA /* Pods-cache_appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cache_appTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cache_appTests/Pods-cache_appTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F96A7B6320965CA00043D34C /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		F96A7B67209A10F90043D34C /* RegistrationInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInfoViewController.swift; sourceTree = "<group>"; };
-		FC053E9E20A64E8A00ECC2B6 /* loanviewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = loanviewcontroller.swift; path = "/Users/martinbrekke/Desktop/iOS-Final-Project-/cache_app/cache_app/loanviewcontroller.swift"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +131,6 @@
 				A98B4C77209A84D90021917F /* GoogleService-Info.plist */,
 				49D1B9D0C5314E9A49347EFB /* Assets.xcassets */,
 				49D1BADFD7F0F158457ABA59 /* LaunchScreen.storyboard */,
-				FC053E9E20A64E8A00ECC2B6 /* loanviewcontroller.swift */,
 				49D1B0D4F8B3D1E796F772E6 /* AppDelegate.swift */,
 				49D1B293B257B75817D0E5CA /* Main.storyboard */,
 				79E9BB6B20A60CA5006E477B /* ViewControllerTax.swift */,
@@ -281,6 +278,18 @@
 					relationsh,
 				);
 				ORGANIZATIONNAME = ncgheorghe;
+				TargetAttributes = {
+					49D1B0A59B677856341E8417 = {
+						ProvisioningStyle = Automatic;
+					};
+					49D1BE35AFA1A14965C598AE = {
+						ProvisioningStyle = Automatic;
+					};
+					49D1BE3E7A73754F2364B9E3 = {
+						DevelopmentTeam = V7RGJM83WP;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = 49D1B6E9FDFD56FB9252BB36 /* Build configuration list for PBXProject "cache_app" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -438,7 +447,6 @@
 				49D1B4DC2A2F65B706EC88EC /* AppDelegate.swift in Sources */,
 				79E9BB6C20A60CA5006E477B /* ViewControllerTax.swift in Sources */,
 				F96A7B68209A10F90043D34C /* RegistrationInfoViewController.swift in Sources */,
-				FC053E9F20A64E8A00ECC2B6 /* loanviewcontroller.swift in Sources */,
 				49D1B315EA2A1DF61810F636 /* ViewController.swift in Sources */,
 				F96A7B6420965CA00043D34C /* LogInViewController.swift in Sources */,
 			);
@@ -483,10 +491,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E6593FE6E5760168DD840A55 /* Pods-cache_appUITests.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = cache_appUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ncgheorghe.cache-appUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = cache_app;
@@ -498,10 +510,14 @@
 			baseConfigurationReference = D7556C68868EA566CB7A204E /* Pods-cache_appTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/cache_app.app/cache_app";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = cache_appTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ncgheorghe.cache-appTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -569,10 +585,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 842E295F2180C2E60BEC9891 /* Pods-cache_appUITests.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = cache_appUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ncgheorghe.cache-appUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = cache_app;
@@ -584,10 +604,14 @@
 			baseConfigurationReference = EFCEDF31678516E2CEF697AA /* Pods-cache_appTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/cache_app.app/cache_app";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = cache_appTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ncgheorghe.cache-appTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -650,10 +674,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V7RGJM83WP;
 				INFOPLIST_FILE = cache_app/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ncgheorghe.cache-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -665,10 +693,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V7RGJM83WP;
 				INFOPLIST_FILE = cache_app/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ncgheorghe.cache-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
