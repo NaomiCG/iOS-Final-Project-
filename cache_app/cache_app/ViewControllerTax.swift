@@ -99,11 +99,9 @@ class ViewControllerTax: UIViewController {
     //variable to recieve email info from previous view controller
     var userEmail:String?
     //pie chart info
-    var taxDataEntry = PieChartDataEntry()
+    var utilitiesDataEntry = PieChartDataEntry()
     var rentDataEntry = PieChartDataEntry()
-    var loanDataEntry = PieChartDataEntry()
-    var personalDataEntry = PieChartDataEntry()
-    
+  
     var numberOfDownloadsDataEntries = [PieChartDataEntry]()
     
     override func viewDidLoad() {
@@ -142,9 +140,38 @@ class ViewControllerTax: UIViewController {
                 print("No salary info found for the user")
                 return
             }
+            
+            //capture rent
+            guard let userRent = (userData["rent"] as? NSString)?.doubleValue else{
+                print("No rent info found for the user")
+                return
+            }
+            
+            //capture utilities
+            guard let userUtilites = (userData["utilities"] as? NSString)?.doubleValue else{
+                print("No utility info found for the user")
+                return
+            }
+            
+            //calculate expenses aka rent + utilities
+            let userExpenses = userRent + userUtilites
+            
+            self.fedDollar.text = String(userRent)     //set expenses percent label
+            self.fedPercent.text = String(format: "%.2f", userRent/userGrossIncome * 100)     //set expenses percent label
+            self.rentDataEntry.value = userRent/userGrossIncome * 100   //set expenses value in the chart
+            self.utilitiesDataEntry.value =  userUtilites/userGrossIncome * 100     //set expenses percent label
+
+            self.rentDataEntry.label = "Rent"
+//            self.utilitiesDataEntry.value = userUtilites   //set expenses value in the chart
+            self.utilitiesDataEntry.label = "Utilties"
+
+            
+            self.stateDollar.text = String(userUtilites)    //set expenses amount label
+           self.statePercent.text = String(format: "%.2f", userUtilites/userGrossIncome * 100)     //set expenses percent label
+            
+            
             self.grossincome.text = String(format:"%.2f", userGrossIncome)    //set income label, truncate double
             // initially set userRemains to gross income, it will be decremented later
-            var userRemains = userGrossIncome
             //state - tax income
             let userTaxRate = self.stateAbbreviations[userState]
             let userTaxValue = userGrossIncome * userTaxRate!
@@ -153,6 +180,10 @@ class ViewControllerTax: UIViewController {
             let userNetIncome = userGrossIncome - userTaxValue
             self.netincome.text = String(format:"%.2f",userNetIncome)    //set net income label
             
+            //chart
+            self.numberOfDownloadsDataEntries = [self.utilitiesDataEntry , self.rentDataEntry]
+            
+            self.updateChartData()
             
             
             
@@ -162,6 +193,16 @@ class ViewControllerTax: UIViewController {
             
     )}
     
+    func updateChartData(){
+        
+        let chartDataSet = PieChartDataSet(values: numberOfDownloadsDataEntries, label: nil)
+        let chartData = PieChartData(dataSet: chartDataSet)
+        
+        let colors = [UIColor(named: "Rent"), UIColor(named: "Tax")]
+        
+        chartDataSet.colors = colors as! [NSUIColor]
+        pieChart.data = chartData
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? MainScreenViewController{

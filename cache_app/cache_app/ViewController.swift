@@ -68,6 +68,10 @@ class ViewController: UIViewController {
         if let destination = segue.destination as? RegistrationInfoViewController{
             destination.userEmail = correctEmail
         }
+        
+        if let destination = segue.destination as? ViewControllerTax{
+            destination.userEmail = correctEmail
+        }
     }
     
     
