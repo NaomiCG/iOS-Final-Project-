@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/martinbrekke/Desktop/iOS-Final-Project-/cache_app/cache_app/loanviewcontroller.swift">
-   </FileRef>
-   <FileRef
       location = "group:cache_app.xcodeproj">
    </FileRef>
    <FileRef

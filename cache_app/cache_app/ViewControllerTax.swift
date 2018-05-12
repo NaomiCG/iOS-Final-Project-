@@ -142,6 +142,30 @@ class ViewControllerTax: UIViewController {
                 print("No salary info found for the user")
                 return
             }
+            
+            //capture rent
+            guard let userRent = (userData["rent"] as? NSString)?.doubleValue else{
+                print("No rent info found for the user")
+                return
+            }
+            
+            //capture utilities
+            guard let userUtilites = (userData["utilities"] as? NSString)?.doubleValue else{
+                print("No utility info found for the user")
+                return
+            }
+            
+            //calculate expenses aka rent + utilities
+            //let userExpenses = userRent + userUtilites
+            
+            self.fedDollar.text = String(userRent)     //set expenses percent label
+            self.fedPercent.text = String(format: "%.2f", userRent/userGrossIncome * 100)     //set expenses percent label
+            
+            
+            self.stateDollar.text = String(userUtilites)    //set expenses amount label
+            self.statePercent.text = String(format: "%.2f", userUtilites/userGrossIncome * 100)     //set expenses percent label
+            
+            
             self.grossincome.text = String(format:"%.2f", userGrossIncome)    //set income label, truncate double
             // initially set userRemains to gross income, it will be decremented later
             var userRemains = userGrossIncome
