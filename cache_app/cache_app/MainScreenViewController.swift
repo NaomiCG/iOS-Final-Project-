@@ -155,14 +155,15 @@ class MainScreenViewController: UIViewController {
         
         content.title = "Important Financial Day:"
         content.body = "Tax Day is in 2 Weeks!"
-        UNNotificationSound.default()
+        content.sound = UNNotificationSound.default()
         
         var dateInfo = DateComponents()
+        dateInfo.year = 2019
         dateInfo.month = 4
         dateInfo.weekday = 15
         dateInfo.hour = 7
         dateInfo.minute = 0
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: false)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: true)
         
         // Create the request object.
         let request = UNNotificationRequest(identifier: "taxday", content: content, trigger: trigger)
