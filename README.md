@@ -44,10 +44,10 @@ The access the information snippets in the app, there are a few different places
 
 ## Built With
 
-* XCode 
-* Swift
+* XCode 9
+* Swift 4
 * Firebase
-* Charts
+* Charts SDK
 
 ## Authors
 
