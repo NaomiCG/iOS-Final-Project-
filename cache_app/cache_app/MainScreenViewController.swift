@@ -197,7 +197,7 @@ class MainScreenViewController: UIViewController {
             self.taxDollarLabel.text = String (format: "%.2f", userTaxRate! * userGrossIncome)     //set tax amount label
             
             self.taxDataEntry.value = userTaxRate! * 100    //set tax value in the chart
-//            self.taxDataEntry.label = "Taxes"
+            self.taxDataEntry.label = "Taxes"
             self.PieChart.description;"Finances"
             
             //calculate expenses aka rent + utilities
@@ -207,7 +207,7 @@ class MainScreenViewController: UIViewController {
             self.rentDollarLabel.text = String(format: "%.2f", userExpenses)    //set expenses amount label
             
             self.rentDataEntry.value = userExpenses/userGrossIncome * 100   //set expenses value in the chart
-//            self.rentDataEntry.label = "Rent"
+            self.rentDataEntry.label = "Rent"
             
             
             //calculate total loans aka student loans + credit card bill
@@ -217,7 +217,7 @@ class MainScreenViewController: UIViewController {
             self.loanDollarLabels.text = String(format: "%.2f", userLoans)      //set loans amount label
             
             self.loanDataEntry.value = userLoans/userGrossIncome * 100      //set loans value in the chart
-//            self.loanDataEntry.label = "Loans"
+            self.loanDataEntry.label = "Loans"
             
             //calculate remaining money
             userRemains -= (userTaxValue + userExpenses + userLoans)
@@ -226,7 +226,7 @@ class MainScreenViewController: UIViewController {
             self.personalDollarLabel.text = String(format: "%.2f", userRemains)     //set remaining money amount label
             
             self.personalDataEntry.value = userRemains/userGrossIncome * 100  //set remaining money value in the chart
-//            self.personalDataEntry.label = "Remains"
+            self.personalDataEntry.label = "Remains"
             
             self.numberOfDownloadsDataEntries = [self.taxDataEntry, self.rentDataEntry, self.loanDataEntry, self.personalDataEntry]
             

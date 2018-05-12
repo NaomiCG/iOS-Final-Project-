@@ -243,11 +243,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Txr-8T-fCY" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="16" y="251" width="343" height="218"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Taxes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xna-j0-PdW">
                                 <rect key="frame" x="47" y="456" width="44" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -429,6 +424,22 @@
                                     <segue destination="bva-Ua-v07" kind="show" id="LIL-An-tQF"/>
                                 </connections>
                             </button>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d1q-fh-604">
+                                <rect key="frame" x="0.0" y="741" width="375" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem systemItem="favorites" id="N8A-iO-Ldc">
+                                        <color key="badgeColor" red="1" green="0.26714252230000002" blue="0.94359078510000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </tabBarItem>
+                                    <tabBarItem title="Item" id="PeY-ha-hBm"/>
+                                </items>
+                            </tabBar>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Txr-8T-fCY" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="223" width="343" height="218"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="tRt-R1-0kx"/>
