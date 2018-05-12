@@ -9,8 +9,26 @@
 import UIKit
 import FirebaseDatabase
 import Charts
+import UserNotifications
+
 
 class MainScreenViewController: UIViewController {
+    
+    //notifications
+    var isGrantedAccess = true;
+    
+    func addNotification(trigger:UNNotificationTrigger?, content:UNMutableNotificationContent, identifier:String){
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request){
+            (error) in
+            if error != nil {
+                print("error adding notification:\(error?.localizedDescription)")
+            }
+        }
+        
+    }
+    
+    
     
     @IBOutlet weak var PieChart: PieChartView!
     
@@ -125,6 +143,29 @@ class MainScreenViewController: UIViewController {
         super.viewDidLoad()
         //pie chart description
         dbReference = Database.database().reference()
+        //notifications
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.badge,.sound]) { (granted, error) in
+            self.isGrantedAccess = granted
+            if !granted {
+                //add alert to complain to user
+            }
+        }
+        
+        let content = UNMutableNotificationContent();
+        
+        content.title = "Important Financial Day:"
+        content.body = "Tax Day is in 2 Weeks!"
+        UNNotificationSound.default()
+        
+        var dateInfo = DateComponents()
+        dateInfo.month = 4
+        dateInfo.weekday = 15
+        dateInfo.hour = 7
+        dateInfo.minute = 0
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: false)
+        
+        // Create the request object.
+        let request = UNNotificationRequest(identifier: "taxday", content: content, trigger: trigger)
         
         //get all the data as a dictionary and handle everything inside one closure
         
@@ -235,6 +276,10 @@ class MainScreenViewController: UIViewController {
         })
     
         
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert,.sound])
     }
     
     
