@@ -47,7 +47,16 @@ The access the information snippets in the app, there are a few different places
 * XCode 9
 * Swift 4
 * Firebase
-* Charts SDK
+* Charts SDK https://github.com/danielgindi/Charts
+
+## Troubleshooting
+
+
+If you run into *code signing* errors following the instructions at:
+https://stackoverflow.com/questions/37806538/code-signing-is-required-for-product-type-application-in-sdk-ios-10-0-stic
+
+If you run into issues with the Charts, visit the document at the SDK:
+https://github.com/danielgindi/Charts/issues
 
 ## Authors
 
